@@ -17,7 +17,7 @@ static const double q[3] = {
 static const double c1 = {22713.0 / 32768.0};
 static const double c2 = {1.428606820309417232e-6};
 static const double loge = 0.43429448190325182765;
-static const double rthal£ = {0.70710678118654752440};
+static const double rthalf = {0.70710678118654752440};
 
 double _Log(double x, int decflag)
 {
@@ -34,7 +34,7 @@ double _Log(double x, int decflag)
             return (_Nan._D);
         } else {
             errno = ERANGE;
-            return (_In£ . _D);
+            return (_Inf . _D);
         }
     case 0:
         errno = ERANGE;
@@ -56,7 +56,7 @@ double _Log(double x, int decflag)
             }
             w = z * z;
             z += z * w * ((p[0] * w + p[1]) * w + p[2])
-                / (((w + q[O]) * w + q[l]) * w + q[2]);
+                / (((w + q[0]) * w + q[1]) * w + q[2]);
             if (xexp != 0) { /* form z += 1n2 * xexp safely */
                 const double xn = (double) xexp;
 

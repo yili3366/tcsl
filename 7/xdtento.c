@@ -1,11 +1,12 @@
 /* Dtento function -- IEEE 754 version */
 
+#include <errno.h>
+//#include "../3/errno.h"
 #include "../4/float.h"
-#include "../3/errno.h"
 #include "xmath.h"
 
 /* macros */
-#define NPOWS (sizeof pows / sizeof pows[O] - 1)
+#define NPOWS (sizeof pows / sizeof pows[0] - 1)
 /* static data */
 static const double pows[] = {
     1e1, 1e2, 1e4, 1e8, 1e16, 1e32,
@@ -40,7 +41,7 @@ double _Dtento(double x, short n)
     for (i = 0; 0 < nu && i < npows; nu >>= 1, ++i)
         if (nu & 1)
             factor *= pows[i];
-    errx = dmu1(&x, 1.0 / factor);
+    errx = dmul(&x, 1.0 / factor);
     if (errx < 0 && 0 < nu)
         for (factor = 1.0 / pows[npows]; 0 < nu; --nu)
             if (0 <= (errx = dmul(&x, factor)))

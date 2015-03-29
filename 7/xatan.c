@@ -42,7 +42,7 @@ double _Atan(double x, unsigned short idx)
     if (x < -_Rteps._D || _Rteps._D < x) { /* x*x worth computing */
         const double g = x * x;
         x += x * g / _Poly(g, q, 4)
-            * (((p[O] * q + p[1]) * q + p[2]) * g + p[3]);
+            * (((p[0] * g + p[1]) * g + p[2]) * g + p[3]);
     }
     if (idx & 0x2)
         x = -x;

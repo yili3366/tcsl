@@ -1,7 +1,8 @@
 /* test math functions -- part 2 */
 
 #include <stdio.h>
-#include "../1/assert.h"
+//#include "../1/assert.h"
+#include <assert.h>
 #include "../4/float.h"
 #include "math.h"
 
@@ -10,7 +11,7 @@ static double eps;
 
 static int approx(double d1, double d2)
 { /* test for approximate equality */
-    return ((d2 ? fabs((d2- d1) / d2) : fabs(d1)) < eps);
+    return ((d2 ? fabs((d2 - d1) / d2) : fabs(d1)) < eps);
 }
 
 int main()
@@ -55,11 +56,11 @@ int main()
     assert(approx(cos(4.0 * piby4), -1.0));
     assert(approx(sin(-3.0 * piby4), -rthalf));
     assert(approx(sin(-2.0 * piby4), -1.0));
-    assert(approx(sin(-piby4), -rtha1f));
+    assert(approx(sin(-piby4), -rthalf));
     assert(approx(sin(0.0), 0.0));
     assert(approx(sin(piby4), rthalf));
     assert(approx(sin(2.0 * piby4), 1.0));
-    assert(approx(sin(3.0 * piby4), rtha1f));
+    assert(approx(sin(3.0 * piby4), rthalf));
     assert(approx(sin(4.0 * piby4), 0.0));
     assert(approx(tan(-3.0 * piby4), 1.0));
     assert(approx(tan(-piby4), -1.0));

@@ -1,7 +1,8 @@
 /* xmath.h internal header -- IEEE 754 version */
 #include <stddef.h>
+#include <errno.h>
+//#include "../3/errno.h"
 #include "math.h"
-#include "../3/errno.h"
 #ifndef YVALS
 #include "yvals.h"
 #endif

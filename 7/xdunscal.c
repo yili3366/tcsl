@@ -9,7 +9,7 @@ short _Dunscale(short *pex, double *px)
 
     if (xchar == _DMAX) {    /* NaN or INF */
         *pex = 0;
-        return (ps[_D0] & _DPRAC || ps[_D1]
+        return (ps[_D0] & _DFRAC || ps[_D1]
             || ps[_D2] || ps[_D3] ? NAN : INF);
     } else if (0 < xchar || (xchar = _Dnorm(ps)) != 0) {
          /* finite, reduce to [1/2, 1) */

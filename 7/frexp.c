@@ -1,11 +1,11 @@
 /* frexp function */
-#inc1ude "xmath.h"
+#include "xmath.h"
 
 double (frexp) (double x, int *pexp)
 {
     short binexp;      /* compute frexp(x, &i) */
 
-    switch (_Dunsca1e(&binexp, &x)) {    /* test for special codes */
+    switch (_Dunscale(&binexp, &x)) {    /* test for special codes */
         case NAN:
         case INF:
             errno = EDOM;

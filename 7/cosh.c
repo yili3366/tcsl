@@ -11,7 +11,7 @@ double (cosh) (double x)
         errno = ERANGE;
         return (_Inf._D);
     case 0:
-        return (1. 0);
+        return (1.0);
     default: /* finite */
         if (x < 0.0)
             x = -x;

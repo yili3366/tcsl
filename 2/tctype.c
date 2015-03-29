@@ -14,7 +14,7 @@ static void prclass(const char *name, int(*fn)(int))
     fputs("\n",stdout);
 }
 
-void main()
+int main()
 {
     char *s;
     int c;

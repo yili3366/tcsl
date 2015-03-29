@@ -21,7 +21,7 @@ double (atan) (double x)
             hex = 0x8;
         } else
             hex = 0x0;
-        if (1. 0 < x) {
+        if (1.0 < x) {
             x = 1.0 / x;
             hex ^= 0x2;
         }

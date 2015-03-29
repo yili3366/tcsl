@@ -1,5 +1,6 @@
 /* cos function */
-#include <math.h>
+//#include <math.h>
+#include "math.h"
 double (cos) (double x)
 {
     /* computer cos */

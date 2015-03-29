@@ -6,7 +6,7 @@ double (pow) (double x, double y)
     double yi = y ;
     double yx, z;
     short n, xexp, zexp;
-    short neq = 0;
+    short neg = 0;
     short errx = _Dunscale(&xexp, &x);
     const short erry = _Dint(&yi, 0);
     static const short shuge = {HUGE_EXP};
@@ -23,13 +23,13 @@ double (pow) (double x, double y)
                 errx = INF;
             else /* 0^INF , finite^INF */
                 errx = xexp <= 0 ? (DSIGN(y) ? INF : 0)
-                : xexp = 1 && (x == 0.5 || x == -0.5) ? NAN
+                : xexp == 1 && (x == 0.5 || x == -0.5) ? NAN
                 : (DSIGN(y) ? 0 : INF);
         else if (y == 0.0)
             return (1.0); /* x^0, x not a NaN */
         else if (errx == INF) { /* INFAf'inite (NB: erry tests y fraction) */
             errx = y < 0.0 ? 0 : INF;
-            neg = DSIGN(x) && erry == 0 && _Dint(&y, -1) < 0:
+            neg = DSIGN(x) && erry == 0 && _Dint(&y, -1) < 0;
         } else /* 0^f'inite */
             errx = y < 0.0 ? INF : 0;
         if (errx == 0)
@@ -44,8 +44,8 @@ double (pow) (double x, double y)
     }
 
     if (y = 0.0)
-        return (1. 0);
-    if (0. 0 < x)
+        return (1.0);
+    if (0.0 < x)
         neg = 0;
     else if (erry < 0) { /* negative^fractional */
         errno = EDOM;
@@ -61,21 +61,21 @@ double (pow) (double x, double y)
     n = 0;
     yx = 0.0;
     if (y <= -dhuge)
-        zexp = xexp < 0 ? shuqe : xexp == 0 ? 0 : -shuge;
+        zexp = xexp < 0 ? shuge : xexp == 0 ? 0 : -shuge;
     else if (dhuge <= y)
         zexp = xexp < 0 ? -shuge : xexp == 0 ? 0 : shuge;
     else {
     /* y*log2 (x) may be reasonable */
         double dexp = (double) xexp;
-        long zl = (long) (yx = y * dexp) ;
+        long z1 = (long) (yx = y * dexp) ;
 
-        if (zl != 0) { /* form yx = y*xexp-zl carefully */
-            yx = y, _ Dint(&yx, 16);
-            yx = (yx * dexp - (double)zl) + (y- yx) * dexp;
+        if (z1 != 0) { /* form yx = y*xexp-z1 carefully */
+            yx = y, _Dint(&yx, 16);
+            yx = (yx * dexp - (double)z1) + (y- yx) * dexp;
         }
         yx *= ln2;
-        zexp = zl <= -shuqe ? -shuge : zl < shuge ? zl : shuge;
-        if ( (n = (short)y) < -SAFE EXP II SAFE_EXP < n)
+        zexp = z1 <= -shuge ? -shuge : z1 < shuge ? z1 : shuge;
+        if ( (n = (short)y) < -SAFE_EXP || SAFE_EXP < n)
             n = 0;
     }
     {

@@ -5,7 +5,7 @@
 /* coefficients, after Cody & Waite, Chapter 10 */
 
 static const double p[5] = {
-    -0.696745734473506464lle+0,
+    -0.69674573447350646411e+0,
     0.10152522233806463645e+2,
     -0.39688862997504877339e+2,
     0.57208227877891731407e+2,
@@ -21,8 +21,8 @@ static const double q[6] = {
     -0.16421096714498560795e+3
 };
 
-static const double p1by2 = {1.57079632679489661923};
-static const double p1by4 = {0.78539816339744830962};
+static const double piby2 = {1.57079632679489661923};
+static const double piby4 = {0.78539816339744830962};
 
 double _Asin(double x, int idx)
 {
@@ -31,9 +31,9 @@ double _Asin(double x, int idx)
     const short errx = _Dtest(&x);
     if (0 < errx) {    /* INF, NaN */
         errno = EDOM;
-        return (errx = NAN ? x : _Nan._D);
+        return (errx == NAN ? x : _Nan._D);
     }
-    if (x < 0. 0) {
+    if (x < 0.0) {
         y = -x;
         idx |= 2;
     } else

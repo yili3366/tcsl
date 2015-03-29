@@ -9,12 +9,12 @@ double (atan2) (double y, double x)
     unsigned short hex;
 
     if (errx <= 0 && erry <= 0) { /* x & y both finite or 0 */
-        if (y < 0. 0){
+        if (y < 0.0){
             y = -y;
             hex = 0x8;
         } else
             hex = 0x0;
-        if (x < 0. 0) {
+        if (x < 0.0) {
             x = -x,
             hex ^= 0x6;
         }

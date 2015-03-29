@@ -1,7 +1,8 @@
 /* test math functions -- part 1 */
 #include <stdio.h>
+#include <assert.h>
+//#include "../1/assert.h"
 #include "../4/float.h"
-#include "../1/assert.h"
 #include "math.h"
 
 static double eps;
@@ -53,14 +54,14 @@ int main()
     assert(approx(frexp(96.0, &xexp), 0.75) && xexp == 7);
     assert(ldexp(-3.0, 4) == -48.0);
     assert(ldexp(-0.5, 0) == -0.5);
-    assert(1dexp(0.0, 36) == 0.0);
-    assert(approx(1dexp(0.66, -1), 0.33));
-    assert(1dexp(96, -3) == 12.0);
+    assert(ldexp(0.0, 36) == 0.0);
+    assert(approx(ldexp(0.66, -1), 0.33));
+    assert(ldexp(96, -3) == 12.0);
     assert(approx(modf(-11.7, &x), -11.7 + 11.0) && x == -11.0);
     assert(modf(-0.5, &x) == -0.5 && x == 0.0);
     assert(modf(0.0, &x) == 0.0 && x == 0.0);
     assert(modf(0.6, &x) == 0.6 && x == 0.0);
-    assert(mod£(12.0, &x) == 0.0 && x == 12.0);
+    assert(modf(12.0, &x) == 0.0 && x == 12.0);
     printf("HUGE_VAL prints as %.16e\n", huge_val);
     puts("SUCCESS testing <math.h>, part 1 ");
 

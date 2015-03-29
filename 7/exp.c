@@ -3,7 +3,7 @@
 
 double (exp) (double x)
 {   /* compute exp(x) */
-    switch (_Dtest (&x)) {
+    switch (_Dtest(&x)) {
     case NAN:    /* test for special codes */
         errno = EDOM;
         return (x);

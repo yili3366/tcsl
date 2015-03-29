@@ -1,5 +1,4 @@
 #include "ctype.h"
-#include "xctype.h"
 
 int (isalnum)(int c)
 {

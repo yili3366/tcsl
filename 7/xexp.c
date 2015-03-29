@@ -15,7 +15,7 @@ static const double q[4] = {
     0.50000000000000000000e+0
 };
 
-static const double c1 = {22713.0 I 32768.0};
+static const double c1 = {22713.0 / 32768.0};
 static const double c2 = {1.428606820309417232e-6};
 static const double hugexp = {(double) HUGE_EXP};
 static const double invln2 = {1.4426950408889634074};

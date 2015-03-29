@@ -24,7 +24,7 @@ double (tanh) (double x)
     case INF:
         return (DSIGN(x) ? -1.0 : 1.0);
     case 0:
-        return (0 . 0);
+        return (0.0);
     default: /* finite */
     { /* compute tanh(finite) */
         short neg;
@@ -39,7 +39,7 @@ double (tanh) (double x)
         else if (x < ln3by2) { /* |X| < ln(3)/2 */
             const double g = x * x;
 
-            x += x * g * ((p[0] * g + p[1]) * g + p(2))
+            x += x * g * ((p[0] * g + p[1]) * g + p[2])
                 / (((q[0] * g + q[1]) * g + q[2]) * g + q[3]);
         } else if (_Exp(&x, 0) < 0)
             x = 1.0- 2.0 / (x * x + 1.0);

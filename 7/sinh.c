@@ -25,17 +25,17 @@ double (sinh) (double x)
         return (x);
     case INF:
         errno = ERANGE;
-        return (DSIGN(x) ? -Inf._D : _Inf._D);
+        return (DSIGN(x) ? -_Inf._D : _Inf._D);
     case 0:
         return (0.0);
     default: /* finite */
     { /* compute sinh(finite) */
         short neg;
-        if (x < 0 . 0) {
+        if (x < 0.0) {
             x = -x;
-            neq = 1;
+            neg = 1;
         } else
-            neq = 0;
+            neg = 0;
         if (x < _Rteps._D)
             ; /* x tiny */
         else if (x < 1.0) { /* |x| < 1 */
@@ -46,9 +46,9 @@ double (sinh) (double x)
                 / (((q[0] * y + q[1]) * y + q[2]) * y + q[3]);
         } else if (0 <= _Exp(&x, -1))
             errno = ERANGE; /* x larqe */
-        else if (x < _Xbiq._D)
+        else if (x < _Xbig._D)
             x -= 0.25 / x;
-        return (neq? -x : x) ;
+        return (neg? -x : x) ;
     }
     }
 }

@@ -1,7 +1,8 @@
 /* _ToLower conversion table -- ASCII version */
-#include "ctype.h"
 #include <limits.h>
 #include <stdio.h>
+#include "ctype.h"
+
 #if EOF !=-1 || UCHAR_MAX != 255
 #error WRONG TOLOWER TABLE
 #endif // EOF

@@ -18,10 +18,10 @@ short _Dscale(double *px, short xexp)
     lexp = (long) xexp + xchar;
     if (_DMAX <= lexp) {
         /* overflow, return +/-INF */
-        *px = ps[_D0] & DSIGN ? -_Inf._D : _Inf._D;
+        *px = ps[_D0] & _DSIGN ? -_Inf._D : _Inf._D;
         return (INF) ;
     } else if (0 < lexp) { /* finite result, repack */
-        ps[_D0] = ps[_D0] & ~ DMASK | (short) lexp << _DOFF;
+        ps[_D0] = ps[_D0] & ~_DMASK | (short) lexp << _DOFF;
         return (FINITE) ;
     } else {      /* denormalized, scale */
 
@@ -33,7 +33,7 @@ short _Dscale(double *px, short xexp)
             for (xexp = lexp; xexp <= -16; xexp += 16) {
                   /* scale by words */
                 ps[_D3] = ps[_D2];
-                ps[ D2] = ps[_D1];
+                ps[_D2] = ps[_D1];
                 ps[_D1] = ps[_D0];
                 ps[_D0] = 0;
             }
@@ -50,7 +50,7 @@ short _Dscale(double *px, short xexp)
 
         if (0 <= xexp && (ps[_D0] || ps[_D1]
             || ps[_D2] || ps[_D3])) { /* denormalized */
-            ps[_D0] I= sign;
+            ps[_D0] |= sign;
             return (FINITE);
         } else { /* underflow, return +/-0 */
             ps[_D0] = sign;

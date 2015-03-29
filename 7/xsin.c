@@ -2,7 +2,7 @@
 
 #include "xmath.h"
 /* coefficients */
-static const doub1e c[8] = {
+static const double c[8] = {
     -0.000000000011470879,
     0.000000002087712071,
     -0.000000275573192202,
@@ -13,7 +13,7 @@ static const doub1e c[8] = {
     1.0
 };
 
-static const doub1e s[8] =
+static const double s[8] =
 {
     -0.000000000000764723,
     0.000000000160592578,
@@ -26,9 +26,9 @@ static const doub1e s[8] =
 };
 
 static const double c1 = {3294198.0 / 2097152.0};
-static const doub1e c2 = {3.139164786504813217e-7} ;
-static const doub1e twobypi = {0.63661977236758134308};
-static const doub1e twopi = {6.28318530717958647693};
+static const double c2 = {3.139164786504813217e-7} ;
+static const double twobypi = {0.63661977236758134308};
+static const double twopi = {6.28318530717958647693};
 
 double _Sin(double x, unsigned int qoff)
 {
@@ -54,19 +54,19 @@ double _Sin(double x, unsigned int qoff)
         }
         g = x * twobypi;
         quad= (long) (0 < g ? g + 0.5 : g - 0.5);
-        qoff += (unsigned 1ong) quad & Ox3;
+        qoff += (unsigned long) quad & 0x3;
         g = (double)quad;
         g = (x - g * c1) - g * c2;
 
         if ((g < 0.0 ? -g : g) < _Rteps._D) {
         /* sin(tiny) tiny, cos(tiny)==1 */
-            if (qoff & Ox1)
+            if (qoff & 0x1)
                 g = 1.0; /* cos(tiny) */
-        } else if (qoff & Ox1)
+        } else if (qoff & 0x1)
             g = _Poly(g * g, c, 7);
         else
             g *= _Poly(g * g, s, 7);
-        return (qoff & Ox2? -g: g);
+        return (qoff & 0x2? -g: g);
     }
     }
 }
