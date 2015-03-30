@@ -1,5 +1,5 @@
 /* localtime function */
-#include <stdlib. h>
+#include <stdlib.h>
 #include "xtime.h"
 
 time_t _Tzoff(void)
@@ -11,7 +11,7 @@ time_t _Tzoff(void)
     if (oldzone != _Times._Tzone) { /* determine time zone offset */
         const char *p, *pe;
         int n;
-        if (Times._Tzone[O] == '\0')
+        if (_Times._Tzone[0] == '\0')
             _Times._Tzone = _Getzone();
         p = _Gettime(_Times ._Tzone, 2, &n);
         tzoff = strtol(p, (char **)&pe, 10);

@@ -1,9 +1,10 @@
 /* difft~e function */
 #include <time.h>
+#include "xtime.h"
 
 double (difftime) (time_t t1, time_t t0)
-(    /* compute difference in times */
+{    /* compute difference in times */
     t0 -= _TBIAS;
     t1 -= _TBIAS;
-    return (tO <= t1 ? (double)(t1 - t0) : -(double)(t0 - t1));
+    return (t0 <= t1 ? (double)(t1 - t0) : -(double)(t0 - t1));
 }

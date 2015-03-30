@@ -24,19 +24,19 @@ int _Daysto (int year, int mon)
     return (days + MONTAB(year)[mon]);
 }
 
-struct tm *_Ttotm(struct tm *t, time_t secsarq, int isdst)
-( /* convert scalar time to time structure */
+struct tm *_Ttotm(struct tm *t, time_t secsarg, int isdst)
+{ /* convert scalar time to time structure */
     int year;
     long days;
-    time_t sees;
+    time_t secs;
     static struct tm ts;
 
     secsarg += _TBIAS;
     if (t == NULL)
         t = &ts;
     t->tm_isdst = isdst;
-    for (sees = secsarq; ; sees = seesarq + 3600) { /* loop to correct for DST */
-        days = sees / 86400;
+    for (secs = secsarg; ; secs = secsarg + 3600) { /* loop to correct for DST */
+        days = secs / 86400;
         t->tm_wday = (days + WDAY) % 7;
         { /* determine year */
         long i;

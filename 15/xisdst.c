@@ -13,8 +13,8 @@ int _Isdst(const struct tm *t)
             int n;
         if (_Times._Tzone[0] == '\0')
             _Times._Tzone = _Getzone();
-        Times._Isdst = _Gettime(_Times._Tzone, 3, &n);
-        if (_Times._Isdst[O] != '\0')
+        _Times._Isdst = _Gettime(_Times._Tzone, 3, &n);
+        if (_Times._Isdst[0] != '\0')
             --_Times._Isdst; /* point to delimiter */
         }
 
@@ -22,7 +22,7 @@ int _Isdst(const struct tm *t)
             return (-1);
         free(rules);
         rules = pr;
-        olddst = Times._Isdst;
+        olddst = _Times._Isdst;
     }
     { /* check time against rules */
     int ans = 0;
@@ -44,7 +44,7 @@ int _Isdst(const struct tm *t)
         }
         if (hour < rday * 24 + pr->hour)
             return (ans);
-        ans = pr->year-- (pr + 1)->year ? !ans : 0;
+        ans = pr->year == (pr + 1)->year ? !ans : 0;
     }
     return (ans) ;
     }

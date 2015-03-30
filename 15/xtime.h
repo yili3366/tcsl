@@ -1,6 +1,10 @@
 /* xtime.h internal header */
 #include <time.h>
-#include "xtinfo.h"
+#include "../6/xtinfo.h"
+#ifndef YVALS
+#include "yvals.h"
+#endif
+
     /* macros */
 #define WDAY 1 /* to get day of week right */
     /* type definitions */
@@ -10,7 +14,7 @@ typedef struct {
 
 /* internal declarations */
 int _Daysto(int, int);
-const char *-Gentime ( const struct tm *, Tinfo *,
+const char *_Gentime ( const struct tm *, _Tinfo *,
     const char*, int *, char*);
 Dstrule *_Getdst(const char*);
 const char *_Gettime(const char*, int, int *);

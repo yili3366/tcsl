@@ -19,7 +19,7 @@ static char *reformat(const char *s)
             tzbuf[i] = *s++;
         else
             return (NULL);
-    tzbuf[9] = *s == '-' I I *s == '+' ? *s++ : '+';
+    tzbuf[9] = *s == '-' || *s == '+' ? *s++ : '+';
     if (!isdigit(*s))
         return (NULL) ;
     val = *s++- '0';
