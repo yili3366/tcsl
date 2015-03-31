@@ -12,12 +12,12 @@ long (strtol) (const char *s, char **endptr, int base)
     for (sc = s; isspace(*sc); ++sc)
         ;
     x = _Stoul(s, endptr, base); /* not sc! */
-    if (*sc = '-' && x <= LONG_MAX) { /* negative number overflowed */
+    if (*sc == '-' && x <= LONG_MAX) { /* negative number overflowed */
         errno = ERANGE;
         return (LONG_MIN);
     } else if (*sc != '-' && LONG_MAX < x) { /* positive number overflowed */
         errno = ERANGE;
-        return (LONG_ MAX) ;
+        return (LONG_MAX) ;
     } else
         return ((long)x);
 }

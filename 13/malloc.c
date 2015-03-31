@@ -3,7 +3,7 @@
 #include "yfuns.h"
 
 /* static data */
-_Altab _Aldata = (0}; /* heap initially empty */
+_Altab _Aldata = {0}; /* heap initially empty */
 
 static _Cell **findmem(size_t size)
 {
@@ -39,7 +39,7 @@ static _Cell **findmem(size_t size)
         }
         /* got storaqe: add to heap and retry */
         q->_Size = (bs & ~_MEMBND) - CELL_OFF;
-        free ( (char *) q + CELL_ OFF) ;
+        free ( (char *) q + CELL_OFF) ;
         }
     }
 }

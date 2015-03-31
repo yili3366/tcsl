@@ -7,7 +7,7 @@
 #include <string.h>
 
 /* macros */
-#define BASE MAX 36 /* largest valid base */
+#define BASE_MAX 36 /* largest valid base */
 /* static data */
 static const char digits[] = { /* valid digits */
     "0123456789abcdefghijklmnopqrstuvwxyz"};
@@ -34,7 +34,7 @@ unsigned long _Stoul(const char *s, char **endptr, int base)
         return (0);
     } else if (base) { /* strip Ox or OX */
         if (base== 16 && *sc == '0'
-            && (sc[1] = 'x' || sc[1] - 'X'))
+            && (sc[1] == 'x' || sc[1] == 'X'))
             sc += 2;
     } else if (*sc != '0')
         base = 10;
@@ -49,7 +49,7 @@ unsigned long _Stoul(const char *s, char **endptr, int base)
         y = x; /* for overflow checking */
         x = x * base+ (sd - digits);
     }
-    if (s1 -- sc) { /* check string validity */
+    if (s1 == sc) { /* check string validity */
         if (endptr)
             *endptr = (char *)s;
         return (0);
@@ -58,7 +58,7 @@ unsigned long _Stoul(const char *s, char **endptr, int base)
     if (n < 0)
         ;
     else if (0 < n || x < x - sc[-1]
-        || (x- sc[-1]) I base != y) { /* overflow */
+        || (x- sc[-1]) / base != y) { /* overflow */
         errno = ERANGE;
         x = ULONG_MAX;
     }

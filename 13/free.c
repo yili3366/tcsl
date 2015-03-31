@@ -18,8 +18,8 @@ void (free) (void *ptr)
         _Cell *qp;
         char *qpp;
         for (qp = _Aldata._Head;
-            qp-> _Next && q < qp-> _Next;)
-            qp = qp->-Next;
+            qp-> _Next && q < qp->_Next;)
+            qp = qp->_Next;
         qpp = (char *) qp + CELL_OFF + qp-> _Size;
         if ((char *)q < qpp)
             return; /* erroneous call */
@@ -28,12 +28,12 @@ void (free) (void *ptr)
             q = qp;
         } else { /* splice q after qp */
             q->_Next = qp->_Next;
-            qp-> Next = q;
+            qp->_Next = q;
         }
     }
     if (q->_Next &&
         (char *)q + CELL_OFF + q->_Size == (char *) q->_Next) { /* merge q and q-> _Next */
-        q->_Size += CELL OFF + q->_Next->_Size;
+        q->_Size += CELL_OFF + q->_Next->_Size;
         q->_Next = q->_Next->_Next;
     }
     _Aldata._Plast = &q->_Next; /* resume scan after freed */

@@ -1,11 +1,11 @@
 /* Mbtowc function */
 #include <limits.h>
 #include <stdlib.h>
-#include "xstate.h"
+#include "../6/xstate.h"
 
 int _Mbtowc(wchar_t *pwc, const char *s, size_t nin, _Mbsave *ps)
 { /* translate multibyte to widechar */
-    static const _Mbsave initial = (0};
+    static const _Mbsave initial = {0};
 
     if (s == NULL) { /* set initial state */
         *ps = initial;

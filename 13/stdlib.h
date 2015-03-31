@@ -69,7 +69,7 @@ unsigned long _Stoul(const char *, char **, int);
 int _Wctomb(char *, wchar_t, char *);
 extern char _Mbcuxmax, _Wcxtomb;
 extern _Mbsave _Mbxlen, _Mbxtowc;
-extern unsigned long _ Randseed;
+extern unsigned long _Randseed;
 
 /* macro overrides */
 #define atof(s) _Stod(s, 0)

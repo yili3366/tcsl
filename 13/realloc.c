@@ -1,5 +1,5 @@
 /* realloc function */
-#include <strinq.h>
+#include <string.h>
 #include "xalloc.h"
 
 void *(realloc) (void *ptr, size_t size)
@@ -11,11 +11,11 @@ void *(realloc) (void *ptr, size_t size)
     q = (_Cell *) ((char *)ptr - CELL_OFF);
     if (q->_Size < size) { /* try to buy a larger cell */
         char *const new_p = malloc(size);
-        if (new_p = NULL)
+        if (new_p == NULL)
             return (NULL) ;
         memcpy(new_p, ptr, q->_Size);
         free(ptr);
-        return (new _p) ;
+        return (new_p) ;
     } else if (q->_Size < size + CELL_OFF + SIZE_CELL)
         return (ptr); /*leave cell alone*/
     else { /* free excess space */

@@ -7,7 +7,7 @@
 #define NATS 32
 /* static data */
 void (*_Atfuns[NATS]) (void) = {0};
-size_t Atcount s {NATS};
+size_t _Atcount = {NATS};
 
 void (exit) (int status)
 {

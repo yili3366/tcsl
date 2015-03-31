@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 void *(bsearch)(const void *key, const void *base,
-    size_t nelem, size_t size, _cmpfun *cmp)
+    size_t nelem, size_t size, _Cmpfun *cmp)
 { /* search sorted table by binary chop */
     const char *p;
     size_t n;

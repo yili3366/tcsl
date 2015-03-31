@@ -1,13 +1,14 @@
 /* xalloc.h internal header */
 #include <stddef.h>
 #include <stdlib.h>
-#ifndef _ YVALS
+#ifndef _YVALS
 #include "yvals.h"
+#endif
 
 /* macros */
 #define CELL_OFF (sizeof (size_t) + _MEMBND & ~_MEMBND)
-#define SIZE_ BLOCK 512 /* minimum block size */
-#define SIZE_ CELL \
+#define SIZE_BLOCK 512 /* minimum block size */
+#define SIZE_CELL \
     ((sizeof (_Cell) + _MEMBND & ~_MEMBND) - CELL_OFF)
     /* type definitions */
 typedef struct _Cell {

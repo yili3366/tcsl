@@ -1,17 +1,18 @@
 /* qsort function */
-#include <stdlib.h>
 #include <string.h>
+#include <stdlib.h>
+
 /* macros */
 #define MAX_BUF 256
 /* chunk to copy on swap */
 
-void (qsort)(void *base, size_ t n, size_t size, _ Cmpfun *cmp)
+void (qsort)(void *base, size_t n, size_t size, _Cmpfun *cmp)
 { /* sort (char base[size])[n] using quicksort*/
     while (1 < n) { /* worth sorting */
         size_t i = 0 ;
         size_t j = n - 1;
         char *qi = (char *)base;
-        char *qj = qi + size • j;
+        char *qj = qi + size * j;
         char *qp = qj;
 
         while (i < j) { /* partition about pivot */
@@ -36,7 +37,7 @@ void (qsort)(void *base, size_ t n, size_t size, _ Cmpfun *cmp)
              }
         }
         if (qi != qp) { /* swap elements i and pivot */
-            char buf[MAX_ BUP];
+            char buf[MAX_BUF];
             char *q1 = qi;
             char *q2 = qp;
             size_t m, ms;

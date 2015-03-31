@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-void *(calloc)(size t nelem, size_t size)
+void *(calloc)(size_t nelem, size_t size)
 { /* allocate a data object on the heap and clear it */
     const size_t n = nelem * size;
     char *p = malloc(n) ;

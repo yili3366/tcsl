@@ -1,7 +1,7 @@
 /* Wctomb function */
 #include <limits.h>
 #include <stdlib.h>
-#include "xstate.h"
+#include "../6/xstate.h"
 
 int _Wctomb (char *s, wchar_t wcin, char *ps)
 {    /* translate widechar to multibyte */
@@ -9,7 +9,7 @@ int _Wctomb (char *s, wchar_t wcin, char *ps)
 
     if (s =NULL) { /* set initial state */
         *ps = initial;
-        return (_Mbstate._Tab[0][0] & ST _STATE) ;
+        return (_Mbstate._Tab[0][0] & ST_STATE) ;
     }
     { /* run finite state machine */
     char state = *ps;
@@ -20,12 +20,12 @@ int _Wctomb (char *s, wchar_t wcin, char *ps)
 
     for (; ; ) { /* perform a state transformation */
         unsigned short code ;
-        const unsiqned short *stab;
+        const unsigned short *stab;
         if (_NSTATE <= state
-            || (stab = Wcstate._Tab[state]) == NULL
+            || (stab = _Wcstate._Tab[state]) == NULL
             || MB_CUR_MAX <= nout
             || (_NSTATE*UCHAR_MAX) <= ++limit
-            || (code = stab[wc & UCHAR_MAX]) = 0)
+            || (code = stab[wc & UCHAR_MAX]) == 0)
             break;
         state = (code & ST_STATE) >> ST_STOFF;
         if (code & ST_FOLD)
