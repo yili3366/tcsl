@@ -1,5 +1,5 @@
 /* strtok function */
-#include <string.h>
+#include "string.h"
 
 char *(strtok)(char *s1, const char *s2)
 {    /* find next token in s1[] delimited by s2[] */

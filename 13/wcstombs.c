@@ -1,7 +1,7 @@
 /* wcstombs function */
-#include <limits.h>
-#include <string.h>
-#include <stdlib.h>
+#include "limits.h"
+#include "string.h"
+#include "stdlib.h"
 
 size_t (wcstombs) (char *s, const wchar_t *wcs, size_t n)
 { /* translate wide char string to multibyte string */

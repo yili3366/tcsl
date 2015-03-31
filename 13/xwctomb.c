@@ -1,7 +1,7 @@
 /* Wctomb function */
-#include <limits.h>
-#include <stdlib.h>
-#include "../6/xstate.h"
+#include "limits.h"
+#include "stdlib.h"
+#include "xstate.h"
 
 int _Wctomb (char *s, wchar_t wcin, char *ps)
 {    /* translate widechar to multibyte */

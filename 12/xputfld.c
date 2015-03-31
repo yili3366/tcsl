@@ -1,5 +1,5 @@
 /* _ Putfld function */
-#include <string.h>
+#include "string.h"
 #include "xstdio.h"
 
 /* macros */

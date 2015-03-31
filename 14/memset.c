@@ -1,5 +1,5 @@
 /* memaet function */
-#include <string.h>
+#include "string.h"
 
 void *(memset) (void *s, int c, size_t n)
 { /* store c throughout unsigned char s[n] */

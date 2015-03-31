@@ -1,8 +1,8 @@
 /* strtol function */
-#include <ctype.h>
-#include <errno.h>
-#include <limits.h>
-#include <stdlib.h>
+#include "ctype.h"
+#include "errno.h"
+#include "limits.h"
+#include "stdlib.h"
 
 long (strtol) (const char *s, char **endptr, int base)
 { /* convert string to long, with checking */

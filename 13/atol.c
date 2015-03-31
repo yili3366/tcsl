@@ -1,5 +1,5 @@
 /* atol function */
-#include <stdlib.h>
+#include "stdlib.h"
 
 long (atol) (const char *s)
 { /* convert string to long */

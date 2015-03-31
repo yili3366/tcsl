@@ -1,9 +1,10 @@
 /* Getfloat function */
-#include <ctype.h>
-#include <locale.h>
-#include <stdlib.h>
-#include <string.h>
+#include "ctype.h"
+#include "locale.h"
+#include "stdlib.h"
+#include "string.h"
 #include "xstdio.h"
+
 int _Getfloat(_Sft *px)
 { /* get a f~oating point value for scanf */
     char *p;

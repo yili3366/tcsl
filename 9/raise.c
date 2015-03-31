@@ -1,7 +1,7 @@
 /* raise function -- simple version */
-#include <signal.h>
-#include <stdio.h>
-#include <std1ib.h>
+#include "signal.h"
+#include "stdio.h"
+#include "std1ib.h"
 
 /* static data */
 _Sigfun *_Sigtable[_NSIG] = {0};    /* handler table */

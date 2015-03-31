@@ -1,5 +1,5 @@
 /* atexit function */
-#include <stdlib.h>
+#include "stdlib.h"
 
 /* external declarations */
 

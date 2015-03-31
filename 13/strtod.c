@@ -1,5 +1,5 @@
 /* strtod function */
-#include <stdlib.h>
+#include "stdlib.h"
 
 double (strtod) (const char *s, char **endptr)
 { /* convert string to double, with checking */

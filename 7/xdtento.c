@@ -1,8 +1,7 @@
 /* Dtento function -- IEEE 754 version */
 
-#include <errno.h>
-//#include "../3/errno.h"
-#include "../4/float.h"
+#include "errno.h"
+#include "float.h"
 #include "xmath.h"
 
 /* macros */

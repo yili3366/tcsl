@@ -1,10 +1,9 @@
 /* test locales */
-#include <assert.h>
-//#include <limits.h>
-#include <stdio.h>
-#include <string.h>
+#include "assert.h"
+#include "stdio.h"
+#include "string.h"
 #include "locale.h"
-#include "../5/limits.h"
+#include "limits.h"
 
 static void testclocale(struct lconv *p)
 {

@@ -1,8 +1,8 @@
 /* _Ldtob function */
-#include <float.h>
-#include <stdlib.h>
-#include <string.h>
-#include "../7/xmath.h"
+#include "float.h"
+#include "stdlib.h"
+#include "string.h"
+#include "xmath.h"
 #include "xstdio.h"
 
 /* macros */

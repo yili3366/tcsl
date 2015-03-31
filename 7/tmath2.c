@@ -1,9 +1,8 @@
 /* test math functions -- part 2 */
 
-#include <stdio.h>
-//#include "../1/assert.h"
-#include <assert.h>
-#include "../4/float.h"
+#include "stdio.h"
+#include "assert.h"
+#include "float.h"
 #include "math.h"
 
 /* static data */

@@ -1,11 +1,9 @@
 /* _Locterm and Locvar functions */
 
-//#include <ctype.h>
-//#include <limits.h>
-#include <string.h>
+#include "string.h"
 #include "xlocale.h"
-#include "../2/ctype.h"
-#include "../5/limits.h"
+#include "ctype.h"
+#include "limits.h"
 
 /* static data */
 static const char dollars[] = {

@@ -1,5 +1,5 @@
 /* wctomb function */
-#include <stdlib.h>
+#include "stdlib.h"
 
 /* static data */
 char _Wcxtomb = { 0} ;

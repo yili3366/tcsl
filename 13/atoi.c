@@ -1,5 +1,5 @@
 /* atoi function */
-#include <stdlib.h>
+#include "stdlib.h"
 
 int (atoi) (const char *s)
 { /* convert string to int */

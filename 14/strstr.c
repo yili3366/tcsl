@@ -1,5 +1,5 @@
 /* strstr function */
-#include <string.h>
+#include "string.h"
 
 char *(strstr)(const char *s1, const char *s2)
 { /* find first occurrence of s2[] in s1[] */

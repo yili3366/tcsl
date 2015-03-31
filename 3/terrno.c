@@ -1,7 +1,7 @@
 /* test errno macro */
-#include <assert.h>
-#include <math.h>
-#include <stdio.h>
+#include "assert.h"
+#include "math.h"
+#include "stdio.h"
 #include "errno.h"
 
 int main()

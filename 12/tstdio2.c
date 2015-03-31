@@ -1,7 +1,7 @@
 /* test stdio functions, part 2 */
-#include <assert.h>
-#include <errno.h>
-#include <string.h>
+#include "assert.h"
+#include "errno.h"
+#include "string.h"
 #include "xstdio.h"
 
 int main()

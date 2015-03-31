@@ -1,6 +1,6 @@
 /* calloc function */
-#include <stdlib.h>
-#include <string.h>
+#include "stdlib.h"
+#include "string.h"
 
 void *(calloc)(size_t nelem, size_t size)
 { /* allocate a data object on the heap and clear it */

@@ -1,8 +1,8 @@
  /* test time functions */
-#include <assert.h>
-#include <stdio.h>
-#include <string.h>
-#include <time.h>
+#include "assert.h"
+#include "stdio.h"
+#include "string.h"
+#include "time.h"
 
 int main()
 { /* test basic workings of time functions */

@@ -1,7 +1,7 @@
 /* setjmp function */
-#include <assert.h>
-#include <setjmp.h>
-#include <string.h>
+#include "assert.h"
+#include "setjmp.h"
+#include "string.h"
 
 static void dummy(int a, int b, int c, int d, int e,
     int f, int g, int h, i.nt i, int j)

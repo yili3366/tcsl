@@ -1,16 +1,11 @@
 /* _Setloc function */
 
-//#include <ctype.h>
-//#include <limits.h>
 #include "xlocale.h"
-#include "../5/limits.h"
-#include "../2/ctype.h"
-
+#include "limits.h"
+#include "ctype.h"
 
 _Linfo *_Setloc(int cat, _Linfo *p)
 {
-    char _Mbcurmax = 1;
-
     /* set category for locale */
     switch (cat) {
     /* set a category */

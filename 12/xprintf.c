@@ -1,7 +1,7 @@
 /* Print£ function */
-#include <ctype.h>
-#include <stdlib.h>
-#include <string.h>
+#include "ctype.h"
+#include "stdlib.h"
+#include "string.h"
 #include "xstdio.h"
 
 #define MAX_PAD (sizeof (spaces) - 1)

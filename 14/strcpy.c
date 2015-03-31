@@ -1,5 +1,5 @@
 /* strcpy function */
-#include <string.h>
+#include "string.h"
 
 char *(strcpy)(char *s1, const char *s2)
 { /* copy char s2[] to s1[] */

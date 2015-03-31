@@ -1,7 +1,6 @@
 /* strerror function */
-#include <string.h>
-//#include <errno.h>
-#include "../3/errno.h"
+#include "string.h"
+#include "errno.h"
 
 char *_Strerror (int errcode, char *buf)
 { /* copy error message into buffer as needed */

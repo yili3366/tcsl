@@ -1,6 +1,6 @@
 /* perror function */
-#include <errno.h>
-#include <string.h>
+#include "errno.h"
+#include "string.h"
 #include "xstdio.h"
 
 void (perror) (const char *s)

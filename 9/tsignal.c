@@ -1,8 +1,8 @@
 /* test signal functions */
 
-#include <assert.h>
-#include <stdio.h>
-#include <stdlib.h>
+#include "assert.h"
+#include "stdio.h"
+#include "stdlib.h"
 #include "signal.h"
 
 /* static data */

@@ -1,5 +1,5 @@
 /* srand function */
-#include <stdlib.h>
+#include "stdlib.h"
 
 void (srand) (unsigned int seed)
 {    /* alter the seed */

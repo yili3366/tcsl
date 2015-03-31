@@ -1,5 +1,5 @@
 /* mbtowc function */
-#include <stdlib.h>
+#include "stdlib.h"
 
 /* static data */
 _Mbsave _Mbxtowc = {0} ;

@@ -1,6 +1,6 @@
 /* Getint function */
-#include <stdlib.h>
-#include <string.h>
+#include "stdlib.h"
+#include "string.h"
 #include "xstdio.h"
 
 int _Getint(_Sft *px, char code)

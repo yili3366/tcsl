@@ -1,5 +1,5 @@
 /* _Loctab data object */
-#include <stddef.h>
+#include "stddef.h"
 #include "xlocale.h"
 /* macros */
 
@@ -13,7 +13,7 @@ _Locitem _Loctab[] = {
     /* controlled by LC_COLLATE */
     "collate", OFF(_Costate._Tab), L_STATE,
     /* controlled by LC_CTYPE */
-    "'ctype", OFF(_Ctype), L_TABLE,
+    "ctype", OFF(_Ctype), L_TABLE,
     "tolower", OFF(_Tolower), L_TABLE,
     "toupper", OFF(_Toupper), L_TABLE,
     "mb_cur_max", OFF(_Mbcurmax), L_VALUE,

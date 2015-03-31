@@ -1,12 +1,12 @@
 /* _Ctype conversion table -- ASCII version */
-
-#include <limits.h>
-#include <stdio.h>
+#include "limits.h"
+#include "stdio.h"
 #include "ctype.h"
 
 #if EOF !=-1 || UCHAR_MAX != 255
 #error WRONG CTYPE TABLE
 #endif // EOF
+
     /* macros */
 #define XDI (_DI|_XD)
 #define XLO (_LO|_XD)

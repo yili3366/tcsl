@@ -4,7 +4,7 @@ SRC = memchr.c memcpy.c memcmp.c memmove.c memset.c \
       strncpy.c strpbrk.c strspn.c strstr.c strtok.c \
       strxfrm.c xstrxfrm.c ../6/xstate.c
 OBJS = tstring
-LDFLAGS = -lm
+LDFLAGS = -lm -I ../include
 
 all: $(OBJS)
 

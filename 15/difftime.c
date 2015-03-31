@@ -1,5 +1,5 @@
-/* difft~e function */
-#include <time.h>
+/* difftime function */
+#include "time.h"
 #include "xtime.h"
 
 double (difftime) (time_t t1, time_t t0)

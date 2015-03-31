@@ -1,5 +1,5 @@
 /* mktime function */
-#include <limits.h>
+#include "limits.h"
 #include "xtime.h"
 
 time_t (mktime) (struct tm *t)

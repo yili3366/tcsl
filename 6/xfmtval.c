@@ -1,9 +1,8 @@
 /* _Fmtval function */
-//#include <limits.h>
-#include <stdio.h>
-#include <string.h>
+#include "stdio.h"
+#include "string.h"
 #include "locale.h"
-#include "../5/limits.h"
+#include "limits.h"
 
 /* macros */
 #define FN_INT_CUR - 2

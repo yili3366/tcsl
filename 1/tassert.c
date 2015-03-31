@@ -1,8 +1,8 @@
 /* test assert macro */
 #define NDEBUG
-#include <signal.h>
-#include <stdio.h>
-#include <stdlib.h>
+#include "signal.h"
+#include "stdio.h"
+#include "stdlib.h"
 #include "assert.h"
 
 /* static data */

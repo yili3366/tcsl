@@ -1,9 +1,8 @@
 /* test setjmp functions */
 
-#include <assert.h>
-#include <stdio.h>
-#include <setjmp.h>
-//#include "setjmp.h"
+#include "assert.h"
+#include "stdio.h"
+#include "setjmp.h"
 
 /* static data */
 static int ctr;

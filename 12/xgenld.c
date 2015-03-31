@@ -1,6 +1,6 @@
 /* _Genld function */
-#include <locale.h>
-#include <string.h>
+#include "locale.h"
+#include "string.h"
 #include "xstdio.h"
 
 void _Genld(_Pft *px, char code, char *p, short nsig,

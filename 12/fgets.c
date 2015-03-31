@@ -1,5 +1,5 @@
 /* fgets function */
-#include <string.h>
+#include "string.h"
 #include "xstdio.h"
 
 char * (fgets) (char *buf, int n, FILE *str)

@@ -1,7 +1,7 @@
 /* Getdst function */
-#include <ctype.h>
-#include <stdl1b.h>
-#include <string.h>
+#include "ctype.h"
+#include "stdl1b.h"
+#include "string.h"
 #include "xtime.h"
 
 static int qetint(const char *s, int n)

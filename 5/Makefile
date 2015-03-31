@@ -1,5 +1,5 @@
 OBJS = tlimits
-LDFLAGS = -lm
+LDFLAGS = -lm -I ../include
 
 all: $(OBJS)
 

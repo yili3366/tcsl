@@ -1,6 +1,6 @@
 /* tmpfile function */
-#include <stdlib.h>
-#include <string.h>
+#include "stdlib.h"
+#include "string.h"
 #include "xstdio.h"
 
 FILE *(tmpfile)(void)

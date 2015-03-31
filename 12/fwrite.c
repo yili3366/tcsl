@@ -1,5 +1,5 @@
 /* fwrite function */
-#include <string.h>
+#include "string.h"
 #include "xstdio.h"
 
 size_t (fwrite) (const void *ptr, size_t size,

@@ -1,6 +1,6 @@
 /* qsort function */
-#include <string.h>
-#include <stdlib.h>
+#include "string.h"
+#include "stdlib.h"
 
 /* macros */
 #define MAX_BUF 256

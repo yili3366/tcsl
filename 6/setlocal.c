@@ -1,10 +1,9 @@
 /* setlocale function */
 
-//#include <ctype.h>
-#include <string.h>
+#include "string.h"
 #include "xlocale.h"
-#include "../2/ctype.h"
-#include "../5/limits.h"
+#include "ctype.h"
+#include "limits.h"
 
 #if _NCAT != 6
 #error WRONG NUMBER OF CATEGORIES

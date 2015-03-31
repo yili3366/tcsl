@@ -1,6 +1,6 @@
 /* sqrt function */
 
-#include "../5/limits.h"
+#include "limits.h"
 #include "xmath.h"
 
 double (sqrt) (double x)

@@ -1,5 +1,5 @@
 /* signal function -- simple version */
-#include <signal.h>
+#include "signal.h"
     /* external declarations */
 extern _Sigfun *_Sigtable[_NSIG];
 

@@ -1,8 +1,8 @@
 /* test string functions */
-#include <assert.h>
-#include <errno.h>
-#include <stdio.h>
-#include <string.h>
+#include "assert.h"
+#include "errno.h"
+#include "stdio.h"
+#include "string.h"
 
 int main()
 { /* teat basic workings of string functions */

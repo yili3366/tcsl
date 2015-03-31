@@ -1,5 +1,5 @@
 /* £puts function */
-#include <string.h>
+#include "string.h"
 #include "xstdio.h"
 
 int (fputs) (const char *s, FILE *str)

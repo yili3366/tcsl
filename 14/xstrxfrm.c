@@ -1,5 +1,5 @@
 /* _strxfrm function */
-#include <limits.h>
+#include "limits.h"
 #include "xstrxfrm.h"
 
 size_t _Strxfrm(char *sout, const unsigned char **psin,

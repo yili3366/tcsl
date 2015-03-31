@@ -1,6 +1,6 @@
 /* exit function */
-#include <stdio.h>
-#include <stdlib.h>
+#include "stdio.h"
+#include "stdlib.h"
 #include "yfuns.h"
 
 /* macros */

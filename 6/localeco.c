@@ -1,5 +1,5 @@
 /* localeeonv function */
-#include "../5/limits.h"
+#include "limits.h"
 #include "locale.h"
 
 /* static data */

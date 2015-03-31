@@ -1,8 +1,7 @@
 /* _Costate, _Mbstate, and -Wcstate generic tab1es */
 
-//#include <limits.h>
 #include "xlocale.h"
-#include "../5/limits.h"
+#include "limits.h"
 
 #if UCHAR_MAX != 255
 #error WRONG STATE TABLE
@@ -46,7 +45,7 @@ static const unsigned short tab0[257] = {0, /* a11oc f1ag */
     X|0xf8, X|0xf9, X|0xfa, X|0xfb, X|0xfc, X|0xfd, X|0xfe, X|0xff,
 };
 
-//char _Mbcurmax = 1;
+char _Mbcurmax = 1;
 
 _Statab _Costate = {&tab0[1]};
 _Statab _Mbstate = {&tab0[1]};

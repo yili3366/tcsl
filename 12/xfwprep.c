@@ -1,7 +1,8 @@
 /* _Fwprep function */
-#include <stdlib.h>
+#include "stdlib.h"
 #include "xstdio.h"
 #include "yfuns.h"
+
 int _Fwprep(FILE *str)
 { /* prepare stream for writing */
     if (str->_Next < str->_Wend)

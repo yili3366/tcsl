@@ -1,8 +1,7 @@
 /* test math functions -- part 1 */
-#include <stdio.h>
-#include <assert.h>
-//#include "../1/assert.h"
-#include "../4/float.h"
+#include "stdio.h"
+#include "assert.h"
+#include "float.h"
 #include "math.h"
 
 static double eps;

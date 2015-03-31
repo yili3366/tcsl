@@ -1,6 +1,6 @@
 /* strncpy function */
 
-#include <string.h>
+#include "string.h"
 
 char *(strncpy) (char *s1, const char *s2, size_t n)
 { /* copy char s2[max n] to s1[n] */

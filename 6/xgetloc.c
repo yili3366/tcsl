@@ -1,7 +1,7 @@
 /*_Getloc function */
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include "stdio.h"
+#include "stdlib.h"
+#include "string.h"
 #include "xlocale.h"
 
 const char *_Skip(const char *s)

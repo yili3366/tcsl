@@ -1,7 +1,7 @@
 /* test float macros */
-#include <assert.h>
-#include <math.h>
-#include <stdio.h>
+#include "assert.h"
+#include "math.h"
+#include "stdio.h"
 #include "float.h"
 
 int main()

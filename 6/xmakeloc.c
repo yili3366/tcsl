@@ -1,6 +1,6 @@
 /* _Makeloc function */
 
-#include <string.h>
+#include "string.h"
 #include "xlocale.h"
 
 static const char *getval(const char *s, unsigned short *ans)

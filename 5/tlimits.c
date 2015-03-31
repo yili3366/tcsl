@@ -1,5 +1,5 @@
 /* test limite macros */
-#include <stdio.h>
+#include "stdio.h"
 
 #include "limits.h"
 

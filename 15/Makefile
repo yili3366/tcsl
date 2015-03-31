@@ -1,9 +1,9 @@
 OBJS = ttime
-LDFLAGS = -lm
+LDFLAGS = -lm -I ../include
 
 all: $(OBJS)
 
-ttime: ttime.c
+ttime: ttime.c ../12/xfiles.c
 	$(CC) $(LDFLAGS) -o $@ $^
 
 .PHONY: clean

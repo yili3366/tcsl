@@ -21,8 +21,8 @@
 
     /* static data */
 _Dvals _Dbl = {
-    (int)((DFRAC-1)*LOG2),                  /*DBL_DIG */
-    (int)DFRAC,                             /*DBL_MANT_DIG */
+    (int)((DFRAC-1)*LOG2),                  /* DBL_DIG */
+    (int)DFRAC,                             /* DBL_MANT_DIG */
     (int)((DMAXE-_DBIAS-1)*LOG2),           /* DBL_MAX_10_EXP */
     (int) (DMAXE-_DBIAS-1),                 /* DBL_MAX_EXP */
     (int) (-_DBIAS*LOG2),                   /* DBL_MIN_10_EXP */
@@ -39,7 +39,7 @@ _Dvals _Flt = {
     (int)(-_FBIAS*LOG2),                    /* FLT_MIN_10_EXP */
     (int)(1-_FBIAS),                        /* FLT_MIN_EXP */
     {FINIT(_FBIAS-FFRAC+2<<_FOFF, 0)},      /* FLT_EPSILLON */
-    {FINIT((FMAXE<<_FOFF)-1,~0)},            /* FLT_MAX */
+    {FINIT((FMAXE<<_FOFF)-1,~0)},           /* FLT_MAX */
     {FINIT(1<<_FOFF, 0)},                   /* FLT_MIN */
     };
 #if _DLONG

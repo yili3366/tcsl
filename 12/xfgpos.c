@@ -1,5 +1,5 @@
 /* _Fqpos function - - UNIX version */
-#include <errno.h>
+#include "errno.h"
 #include "xstdio.h"
 
     /* UNIX system call */

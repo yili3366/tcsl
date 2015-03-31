@@ -1,7 +1,7 @@
  /* _Getfld function */
-#include <ctype.h>
-#include <limits.h>
-#include <string.h>
+#include "ctype.h"
+#include "limits.h"
+#include "string.h"
 #include "xstdio.h"
 
 const char * _Getfld(_Sft *px, const char *s)

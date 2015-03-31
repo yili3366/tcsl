@@ -1,5 +1,5 @@
 /* _Gettime function */
-#include <string.h>
+#include "string.h"
 #include "xtime.h"
 
 const char *_Gettime(const char *s, int n, int *len)

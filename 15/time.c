@@ -1,5 +1,5 @@
 /* time function -- UNIX version */
-#include <time.h>
+#include "time.h"
 
      /* UNIX system call */
 time_t _Time(time_t *);

@@ -1,5 +1,5 @@
 /* memmove function */
-#include <string.h>
+#include "string.h"
 
 void *(memmove) (void *s1, const void *s2, size_t n)
 {    /* copy char s2[n] to s1[n] safely*/

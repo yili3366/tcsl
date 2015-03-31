@@ -1,7 +1,7 @@
 /* test stdarg macros */
-#include <assert.h>
-#include <stdio.h>
-#include <stdarg.h>
+#include "assert.h"
+#include "stdio.h"
+#include "stdarg.h"
 
 /* type definitions */
 typedef struct {

@@ -1,5 +1,5 @@
 /* gets function */
-#include <string.h>
+#include "string.h"
 #include "xstdio.h"
 
 char *(gets) (char *buf)

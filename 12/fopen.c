@@ -1,5 +1,5 @@
 /* fopen function */
-#include <stdlib.h>
+#include "stdlib.h"
 #include "xstdio.h"
 
 FILE *(fopen) (const char *name, const char *mods)

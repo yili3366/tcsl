@@ -1,6 +1,6 @@
 /* _ToLower conversion table -- ASCII version */
-#include <limits.h>
-#include <stdio.h>
+#include "limits.h"
+#include "stdio.h"
 #include "ctype.h"
 
 #if EOF !=-1 || UCHAR_MAX != 255

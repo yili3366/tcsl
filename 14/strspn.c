@@ -1,5 +1,5 @@
 /* strspn function */
-#include <string.h>
+#include "string.h"
 
 size_t (strspn) (const char *s1, const char *s2)
 { /* find index of first s1[i] that matches no s2[] */

@@ -1,5 +1,5 @@
 /* abs function */
-#include <stdlib.h>
+#include "stdlib.h"
 
 int (abs) (int i)
 {

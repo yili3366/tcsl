@@ -1,6 +1,6 @@
 /* _Strftime function */
-#include <stdlib.h>
-#include <string.h>
+#include "stdlib.h"
+#include "string.h"
 #include "xtime.h"
 
     /* macros */

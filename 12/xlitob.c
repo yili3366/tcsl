@@ -1,7 +1,7 @@
 /* _Litob function */
-#include <stdlib.h>
-#include <string.h>
-#include "../7/xmath.h"
+#include "stdlib.h"
+#include "string.h"
+#include "xmath.h"
 #include "xstdio.h"
 
 static char ldigs [] = "0123456789abcdef";

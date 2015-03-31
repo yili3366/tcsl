@@ -1,5 +1,5 @@
 /* tmpnam function -- UNIX version */
-#include <string.h>
+#include "string.h"
 #include "xstdio.h"
 
 /* UNIX system call */

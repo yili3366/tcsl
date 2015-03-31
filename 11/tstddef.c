@@ -1,8 +1,8 @@
  /* test stddef definitions */
-#include <assert.h>
-#include <limits.h>
-#include <stdio.h>
-#include <stddef.h>
+#include "assert.h"
+#include "limits.h"
+#include "stdio.h"
+#include "stddef.h"
 
 /* type definitions */
 typedef struct {
@@ -41,7 +41,7 @@ int main()
     assert(*(int *) (ps + offs[2]) == 3);
     printf("sizeof (size_t) = %u\n", sizeof (size_t));
     printf("sizeof (wchar_t) = %u\n", sizeof (wchar_t));
-    puts ("SUCCESS testing <stddef. h>");
+    puts ("SUCCESS testing <stddef.h>");
     return (0);
 }
 

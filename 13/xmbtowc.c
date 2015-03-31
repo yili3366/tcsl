@@ -1,7 +1,7 @@
 /* Mbtowc function */
-#include <limits.h>
-#include <stdlib.h>
-#include "../6/xstate.h"
+#include "limits.h"
+#include "stdlib.h"
+#include "xstate.h"
 
 int _Mbtowc(wchar_t *pwc, const char *s, size_t nin, _Mbsave *ps)
 { /* translate multibyte to widechar */
@@ -30,12 +30,12 @@ int _Mbtowc(wchar_t *pwc, const char *s, size_t nin, _Mbsave *ps)
             break;
         state = (code & ST_STATE) >> ST_STOFF;
         if (code & ST_FOLD)
-            wc = wc & -UCHAR_MAX I code & ST_CH;
+            wc = wc & -UCHAR_MAX | code & ST_CH;
         if (code & ST_ROTATE)
-            wc = wc >> CHAR BIT & UCHAR MAX I wc << CHAR_BIT;
+            wc = wc >> CHAR_BIT & UCHAR_MAX | wc << CHAR_BIT;
         if (code & ST_INPUT && *su != '\0')
             ++su, --nin, limit = 0;
-        if (code & ST _OUTPUT) { /* produce an output wchar */
+        if (code & ST_OUTPUT) { /* produce an output wchar */
             if (pwc)
                 *pwc = wc;
             ps->_State = state;

@@ -1,5 +1,5 @@
 /* fread function */
-#include <string.h>
+#include "string.h"
 #include "xstdio.h"
 
 size_t (fread) (void *ptr, size_t size, size_t nelem, FILE *str)

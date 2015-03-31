@@ -1,5 +1,5 @@
 /* rand function */
-#include <stdlib.h>
+#include "stdlib.h"
 
 /* the seed */
 unsigned long _Randseed = 1;

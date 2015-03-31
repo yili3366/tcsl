@@ -1,5 +1,5 @@
 /* freopen function */
-#include <stdlib.h>
+#include "stdlib.h"
 #include "xstdio.h"
 
 FILE *(freopen) (const char *name, const char *mods, FILE *str)

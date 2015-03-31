@@ -1,5 +1,5 @@
 /* mb1en function */
-#include <stdlib.h>
+#include "stdlib.h"
 
 /* static data */
 _Mbsave _Mbxlen = {0};
