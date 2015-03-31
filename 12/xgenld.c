@@ -1,5 +1,5 @@
 /* _Genld function */
-#include <1ocale.h>
+#include <locale.h>
 #include <string.h>
 #include "xstdio.h"
 
@@ -10,7 +10,7 @@ void _Genld(_Pft *px, char code, char *p, short nsig,
 
     if (nsig <= 0)
         nsig = 1, p = "0";
-    if (code == 'f' || (code == 'g' || code == G')
+    if (code == 'f' || (code == 'g' || code == 'G')
         && -4 <= xexp && xexp < px->prec) { /* 'f' format */
         ++xexp; /* change to leading digit count */
         if (code != 'f') { /* fixup for 'g' */
@@ -35,14 +35,14 @@ void _Genld(_Pft *px, char code, char *p, short nsig,
             memcpy(&px->s[px->n1], p, nsig);
             px->n1 += nsig;
             px->nz1 = xexp - nsig;
-            if (0 < px->prec I I px->flags & _FNO)
+            if (0 < px->prec || px->flags & _FNO)
             px->s[px->n1] =point, ++px->n2;
             px->nz2 = px->prec;
         } else { /* enough digits before point */
             memcpy(&px->s[px->n1], p, xexp);
             px->n1 += xexp;
             nsig -= xexp;
-            if (0 < px->prec II px->flags & _FNO)
+            if (0 < px->prec || px->flags & _FNO)
                 px->s[px->n1++] =point;
             if (px->prec < nsig)
                 nsig = px->prec;

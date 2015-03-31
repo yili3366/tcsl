@@ -13,7 +13,7 @@ FILE *(fopen) (const char *name, const char *mods)
             if (str == NULL)
             return (NULL);
             _Files[i] = str;
-            str->Mode = _MALFIL;
+            str->_Mode = _MALFIL;
             break;
         } else if (_Files[i]->_Mode == 0) { /* setup preallocated _Files[i] */
             str = _Files[i];

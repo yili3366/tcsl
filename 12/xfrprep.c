@@ -1,6 +1,6 @@
 /* _Frprep function */
 #include <stdlib.h>
-#include "xatdio.h"
+#include "xstdio.h"
 #include "yfuns.h"
 
 int _Frprep(FILE *str)
@@ -11,10 +11,10 @@ int _Frprep(FILE *str)
         return (0);
     else if ((str->_Mode & (_MOPENR|_MWRITE)) != _MOPENR) {
         /*can't read after write */
-        str->_Mode I= _MERR;
+        str->_Mode |= _MERR;
         return (-1);
     }
-    if ( str->_ Buf)
+    if ( str->_Buf)
         ;
     else if ((str->_Buf = malloc(BUFSIZ)) == NULL) {
         /* use 1-char _Cbuf */
@@ -22,14 +22,14 @@ int _Frprep(FILE *str)
         str->_Bend = str->_Buf + 1;
     } else {
         /* set up allocated buffer */
-        str->_Mode |= _MALBOF;
+        str->_Mode |= _MALBUF;
         str->_Bend = str->_Buf + BUFSIZ;
     }
     str->_Next = str->_Buf;
     str->_Rend = str->_Buf;
     str->_Wend = str->_Buf;
     { /* try to read into buffer */
-    int n = _Fread(str, str->_Buf, str-> Bend- str->_Buf);
+    int n = _Fread(str, str->_Buf, str->_Bend- str->_Buf);
 
     if (n < 0) { /* report error and fail */
         str->_Mode |= _MERR;

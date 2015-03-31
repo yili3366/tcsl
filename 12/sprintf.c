@@ -1,5 +1,5 @@
 /* sprint£ function */
-#include <strinq.h>
+#include <string.h>
 #include "xstdio.h"
 
 static void *prout(void *s, const char *buf, size_t n)
@@ -13,7 +13,7 @@ int (sprintf) (char *s, const char *fmt, ...)
     va_list ap;
 
     va_start(ap, fmt);
-    ana= _Printf(&prout, s, fmt, ap);
+    ans= _Printf(&prout, s, fmt, ap);
     if (0 <= ans)
         s[ans] = '\0';
     va_end(ap);

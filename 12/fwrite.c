@@ -28,7 +28,7 @@ size_t (fwrite) (const void *ptr, size_t size,
         s += m, ns -= m;
         str->_Next += m;
         if (s1 && fflush(str)) { /* disable macros on failure */
-            str-> Wend= str->_Buf;
+            str->_Wend= str->_Buf;
             break;
         }
         }

@@ -1,5 +1,5 @@
 /* vs.printf function */
-#include <String.h>
+#include <string.h>
 #include "xstdio.h"
 
 static void *prout(void *s, const char *buf, size_t n)

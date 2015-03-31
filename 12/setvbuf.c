@@ -8,7 +8,7 @@ int (setvbuf) (FILE *str, char *abuf, int smode, size_t size)
     int mode;
     unsigned char *buf = (unsigned char *)abuf;
 
-    if (str->_Mode & (_MREADI_MWRITE))
+    if (str->_Mode & (_MREAD|_MWRITE))
         return (-1);
     mode = smode == _IOFBF ? 0
         : smode == _IOLBF ? _MLBF
@@ -26,7 +26,7 @@ int (setvbuf) (FILE *str, char *abuf, int smode, size_t size)
     else
         mode |= _MALBUF;
     if (str->_Mode & _MALBUF)
-        free(str->_Buf), str-> Mode &= ~_MALBUF;
+        free(str->_Buf), str->_Mode &= ~_MALBUF;
     str->_Mode |= mode;
     str->_Buf = buf;
     str->_Bend = buf + size;

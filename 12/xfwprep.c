@@ -4,7 +4,7 @@
 #include "yfuns.h"
 int _Fwprep(FILE *str)
 { /* prepare stream for writing */
-    if (str-> Next < str-> _Wend)
+    if (str->_Next < str->_Wend)
         return (0);
     else if (str->_Mode & _MWRITE)
         return (fflush(str));

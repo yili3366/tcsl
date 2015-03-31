@@ -10,7 +10,7 @@ int (fputs) (const char *s, FILE *str)
         else if (_Fwprep(str) < 0)
             return (EOF) ;
         { /* copy in as many as possible */
-        const char *s1 = str-> Mode & MLBF
+        const char *s1 = str->_Mode & _MLBF
             ? strchr(s, '\n') : NULL;
         size_t m = s1 ? s1 - s + 1 : strlen(s);
         size_t n;
@@ -27,7 +27,7 @@ int (fputs) (const char *s, FILE *str)
         }
         }
     }
-    if (str->_MOde & _MNBF) { /* disable macros and drain */
+    if (str->_Mode & _MNBF) { /* disable macros and drain */
         str->_Wend = str->_Buf;
         if (fflush(str))
             return (EOF);

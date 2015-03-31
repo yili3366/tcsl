@@ -1,5 +1,5 @@
 /* fflush function */
-#include "X8tdio.h"
+#include "xstdio.h"
 #include "yfuns.h"
 
 int (fflush) (FILE *str)
@@ -9,7 +9,7 @@ int (fflush) (FILE *str)
     if (str = NULL) { /* recurse on all streams */
         int nf, stat;
 
-        for (stat = 0, nf = 0; nf < FOPEN MAX; ++nf)
+        for (stat = 0, nf = 0; nf < FOPEN_MAX; ++nf)
             if (_Files[nf] && fflush(_Files[nf]) < 0)
                 stat = EOF;
         return (stat);
@@ -20,7 +20,7 @@ int (fflush) (FILE *str)
         n = _Fwrite(str, s, str->_Next - s);
         if (n <= 0) { /* report error and fail */
             str->_Next = str->_Buf;
-            8tr->_Wend = str->_Buf;
+            str->_Wend = str->_Buf;
             str->_Mode |= _MERR;
             return (EOF);
         }

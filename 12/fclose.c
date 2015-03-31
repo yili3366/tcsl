@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "xstdio.h"
 #include "yfuns.h"
+
 int (fclose) (FILE *str)
 { /* close a stream */
     int stat = fflush(str);
@@ -20,7 +21,7 @@ int (fclose) (FILE *str)
     str->_Mode = 0;
     str->_Next = &str->_Cbuf;
     str->_Rend = &str->_Cbuf;
-    str->_Wend = &str-> Cbuf;
+    str->_Wend = &str->_Cbuf;
     str->_Nback = 0;
     if (str->_Mode & _MALFIL) { /* find _Files[i] entry and free */
         size_t i;

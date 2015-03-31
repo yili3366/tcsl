@@ -1,5 +1,5 @@
 /* putc function */
-#include "xstdio. h"
+#include "xstdio.h"
 
 int (putc) (int c, FILE *str)
 {  /* put character to stream */

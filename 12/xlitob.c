@@ -1,7 +1,7 @@
 /* _Litob function */
 #include <stdlib.h>
 #include <string.h>
-#include "xmath.h"
+#include "../7/xmath.h"
 #include "xstdio.h"
 
 static char ldigs [] = "0123456789abcdef";
@@ -10,7 +10,7 @@ static char udigs [] = "0123456789ABCDEF";
 void _Litob(_Pft *px, char code)
 { /* convert unsigned long to text */
     char ac[24]; /* safe for 64-bit integers*/
-    char *digs = code = 'X' ? udigs : ldigs;
+    char *digs = code == 'X' ? udigs : ldigs;
     int base = code = 'o' ? 8 :
         code != 'x' && code != 'X' ? 10 : 16;
     int i= sizeof(ac);
@@ -32,6 +32,6 @@ void _Litob(_Pft *px, char code)
     if (px->n1 < px->prec)
         px->nz0 = px->prec - px->n1;
     if (px->prec < 0 && (px->flags & (_FMI |_FZE)) == _FZE
-        && 0 < (i = px->width- px->nO - px->nz0 - px->n1))
+        && 0 < (i = px->width- px->n0 - px->nz0 - px->n1))
         px->nz0 += i;
 }

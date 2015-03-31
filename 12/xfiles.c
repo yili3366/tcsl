@@ -7,7 +7,7 @@ static unsigned char ebuf[80];
 /* the standard streams */
 static FILE sin = { /* standard input */
     _MOPENR, 0,
-    NULL, NULL, &sin._ Cbuf,
+    NULL, NULL, &sin._Cbuf,
     &sin._Cbuf, NULL, &sin._Cbuf,
 };
 
@@ -18,7 +18,7 @@ static FILE sout = { /* standard output */
 };
 
 static FILE serr = { /* standard error */
-    _MOPENWI_MNBF, 2,
+    _MOPENW|_MNBF, 2,
     ebuf, ebuf + sizeof (ebuf), ebuf,
     ebuf, NULL, ebuf,
 };

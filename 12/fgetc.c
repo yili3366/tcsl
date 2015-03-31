@@ -1,5 +1,5 @@
 /* fgetc function */
-#inc1ude "xstdio.h"
+#include "xstdio.h"
 
 int (fgetc) (FILE *str)
 {

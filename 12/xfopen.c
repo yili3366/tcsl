@@ -6,10 +6,10 @@ int _Open(const char*, int, int);
 
 int _Fopen ( const char *path, unsigned int smode, const char *mode)
 { /* open from a file */
-    unsigned int ace;
+    unsigned int acc;
 
-    acc = (smode & (_MOPENRI_MOPENW)) == (_MOPENR | _MOPENW) ? 2
-        : smode & MOPENW ? 1 : 0;
+    acc = (smode & (_MOPENR|_MOPENW)) == (_MOPENR | _MOPENW) ? 2
+        : smode &_MOPENW ? 1 : 0;
     if ( smode & _MOPENA)
         acc |= 010;  /* O_APPEND */
     if (smode & _MTRUNC)

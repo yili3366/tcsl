@@ -6,7 +6,7 @@
 #include "xstdio.h"
 int _Getfloat(_Sft *px)
 { /* get a f~oating point value for scanf */
-    char '*p;
+    char *p;
     int ch;
     char ac[FMAX+1];
     char seendig = 0;
@@ -15,14 +15,14 @@ int _Getfloat(_Sft *px)
         || FMAX < px->width ? FMAX : px->width;
     p = ac, ch = GETN(px);
     if (ch == '+' || ch == '-')
-        '*p++ = ch, ch = GETN(px) ;
+        *p++ = ch, ch = GETN(px) ;
     for (; isdigit(ch); seendig = 1)
         *p++ = ch, ch = GETN(px);
     if (ch == localeconv()->decimal_point[0])
         *p++ = ch, ch = GETN(px) ;
     for (; isdigit(ch); seendig = 1)
         *p++ = ch, ch = GETN (px) ;
-    if ((ch = 'e' || ch = 'E') && seendig) { /* parse exponent */
+    if ((ch == 'e' || ch == 'E') && seendig) { /* parse exponent */
         *p++ = ch, ch = GETN (px);
         if (ch == '+' || ch == '-')
             *p++ = ch, ch = GETN(px) ;
@@ -38,7 +38,7 @@ int _Getfloat(_Sft *px)
 
         px->stored = 1;
         if (px->qual == 'l')
-            *va_arg(px->ap, double *) = dva1;
+            *va_arg(px->ap, double *) = dval;
         else if (px->qual != 'L')
             *va_arg(px->ap, float *) = dval;
         else

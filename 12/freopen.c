@@ -1,5 +1,5 @@
 /* freopen function */
-#include <std1ib.h>
+#include <stdlib.h>
 #include "xstdio.h"
 
 FILE *(freopen) (const char *name, const char *mods, FILE *str)
@@ -8,6 +8,6 @@ FILE *(freopen) (const char *name, const char *mods, FILE *str)
 
     str->_Mode &= ~_MALFIL;
     fclose(str) ;
-    str->Mode = mode;
+    str->_Mode = mode;
     return (_Foprep(name, mods, str));
 }

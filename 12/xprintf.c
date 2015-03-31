@@ -9,14 +9,14 @@
     for (; 0 < j; j -= i) \
     {i = MAX_PAD < j ? MAX_PAD : j; PUT(s, i); } }
 #define PUT(s, n) \
-    if (0 < (n)) {if ((arg = (*pfn)(arg, a, n)) != NULL)\
+    if (0 < (n)) {if ((arg = (*pfn)(arg, s, n)) != NULL)\
         x.nchar += (n); else return (EOF); }
 
 static char spaces[] = "                                ";
 static char zeroes[] = "00000000000000000000000000000000";
 
-int _ Printf(void *(*pfn)(void *, const char*, size_ t),
-    void *arg, const char *fmt, va_ list ap)
+int _Printf(void *(*pfn)(void *, const char*, size_t),
+    void *arg, const char *fmt, va_list ap)
 { /* print formatted */
 
     _Pft x;
@@ -29,10 +29,10 @@ int _ Printf(void *(*pfn)(void *, const char*, size_ t),
         wchar_t wc;
         _Mbsave state = {0};
 
-        while (0 < (n = _ Mbtowc(&wc, a, MB_CUR_MAX, &state))) {
+        while (0 < (n = _Mbtowc(&wc, s, MB_CUR_MAX, &state))) {
         /* scan for '%' or '\0' */
             s += n;
-            if (we == '%') { /* got a conversion specifier */
+            if (wc == '%') { /* got a conversion specifier */
                 --s;
                 break;
             }
@@ -40,13 +40,13 @@ int _ Printf(void *(*pfn)(void *, const char*, size_ t),
         PUT(fmt, s - fmt);
         if (n <= 0)
             return (x.nchar);
-        fmt = ++&;
+        fmt = ++s;
         }
         { /* parse a conversion specifier */
         const char *t;
         static const char fchar[] = {" +-#0"} ;
         static const unsigned int fbit[] = {
-            _FSP, _FPL, _FMX, _FNO, _FZE, 0};
+            _FSP, _FPL, _FMI, _FNO, _FZE, 0};
         for (x.flags = 0; (t = strchr(fchar, *s)) != NULL; ++s)
             x.flags |= fbit[t - fchar];
         if (*s == '*') { /* qet width argument */
@@ -67,13 +67,13 @@ int _ Printf(void *(*pfn)(void *, const char*, size_ t),
             ++s ;
         } else /* accumulate precision digits */
             for (x.prec = 0; isdigit(*s); ++s)
-                if (x.prec < _NMAX)
+                if (x.prec < _WMAX)
                     x.prec = x.prec * 10 + *s- '0';
         x.qual = strchr("hlL", *s) ? *s++ : '\0';
         }
 
         { /* do the conversion */
-        char ac [32];
+        char ac[32];
         _Putfld(&x, &ap, *s, ac);
         x.width -= x.n0 + x.nz0 + x.n1 + x.nz1 + x.n2 + x.nz2;
         if (! (x.flags & _FMI))

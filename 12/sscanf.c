@@ -5,7 +5,7 @@ static int scin(void *str, int ch)
 {   /* get or put a character */
     char *s = *(char **)str;
 
-    if (ch aa _WANT)
+    if (ch == _WANT)
         if (*s == '\0')
             return ( EOF) ;
         else { /* deliver a character */

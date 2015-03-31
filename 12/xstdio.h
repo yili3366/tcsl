@@ -1,4 +1,6 @@
-/* xstdio.h i nternal header */
+/* xstdio.h internal header */
+#ifndef _XSTDIO
+#define _XSTDIO
 #include <stdarg.h>
 #include <stdio.h>
 
@@ -20,10 +22,10 @@
     /* codes for _Printf and Scanf */
 #define _FSP 0x01
 #define _FPL 0x02
-#define _PMI 0x04
-#define _PNO 0x08
+#define _FMI 0x04
+#define _FNO 0x08
 #define _FZE 0x10
-#define _WMAX ggg
+#define _WMAX 999
 #define _WANT (EOF-1)
     /* macros for Scanf */
 #define FMAX 512 /* widest supported field */
@@ -31,7 +33,7 @@
 #define GETN(px) (0 <= --(px)->nget ? GET(px) : _WANT)
 #define UNGET(px, ch) \
     (--(px)->nchar, (*(px)->pfn)((px)->arg, ch))
-#define UNGETN(px, ch) {if ((ch) I= _WANT) UNGET(px, ch); }
+#define UNGETN(px, ch) {if ((ch) != _WANT) UNGET(px, ch); }
     /* type definitions */
 typedef struct {
     union {
@@ -68,5 +70,6 @@ void _Litob(_Pft *, char);
 int _Printf(void *(*)(void*, const char*, size_t),
     void*, const char *, va_list);
 void _Putfld(_Pft *, va_list *, char, char *);
-int _scanf(int (*)(void*, int),
+int _Scanf(int (*)(void*, int),
     void *, const char *, va_list);
+#endif

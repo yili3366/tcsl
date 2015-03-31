@@ -6,9 +6,9 @@ FILE *_Foprep(const char *name, const char *mods, FILE *str)
 { /* make str safe for fclose, macros */
     str->_Handle = -1;
     str->_Tmpnam =NULL;
-    str-> Buf = NULL;
+    str->_Buf = NULL;
     str->_Next = &str->_Cbuf;
-    str-> Rend= &str->_Cbuf;
+    str->_Rend= &str->_Cbuf;
     str->_Wend = &str->_Cbuf;
     str->_Nback = 0;
     str->_Mode = (str->_Mode & _MALFIL)
@@ -26,13 +26,13 @@ FILE *_Foprep(const char *name, const char *mods, FILE *str)
             if (str->_Mode & _MBIN)
                 break;
             else
-                str->Mode |= _MBIN;
+                str->_Mode |= _MBIN;
         else
             if ((str->_Mode & (_MOPENR|_MOPENW))
                 == (_MOPENR | _MOPENW))
                 break;
             else
-                str->Mode |= _MOPENR|_MOPENW;
+                str->_Mode |= _MOPENR|_MOPENW;
     str->_Handle = _Fopen(name, str->_Mode, mods);
     if (str->_Handle < 0) { /* open failed */
         fclose(str);

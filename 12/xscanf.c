@@ -51,7 +51,7 @@ int _Scanf(int (*pfn)(void *, int), void *arg,
                 x.width = x.width * 10 + *s - '0';
         x.qual = strchr("hlL", *s) ? *s++ : '\0';
         if (!strchr ("cn[", *s)) { /* match leading white- space */
-             while (isspa ce(ch = GET(&x)))
+             while (isspace(ch = GET(&x)))
                  ;
              UNGET(&x, ch);
         }

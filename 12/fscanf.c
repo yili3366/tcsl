@@ -4,14 +4,14 @@
 static int scin(void *str, int ch)
 { /* get or put a character */
     if (ch == _WANT)
-        return (fgetc((PILE *)str));
+        return (fgetc((FILE *)str));
     else if (0 <= ch)
-        return (ungetc(ch, (PILE *)str));
+        return (ungetc(ch, (FILE *)str));
     else
         return (ch);
 }
 
-int (fscanf)(PILE *str, const char *fmt, ... )
+int (fscanf)(FILE *str, const char *fmt, ... )
 {
      /* read formatted from stream */
     int ans;

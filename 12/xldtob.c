@@ -2,7 +2,7 @@
 #include <float.h>
 #include <stdlib.h>
 #include <string.h>
-#include "xmath.h"
+#include "../7/xmath.h"
 #include "xstdio.h"
 
 /* macros */
@@ -39,7 +39,7 @@ void _Ldtob(_Pft *px, char code)
         { /* scale ldval to --10^(NDIG/2) */
         int i, n;
 
-        if (ldval < 0 . 0)
+        if (ldval < 0.0)
             ldval = -ldval;
         if ((xexp = xexp * 30103L / 100000L- NDIG/2) < 0) { /* scale up */
             n = (-xexp + (NDIG/2-1)) & ~(NDIG/2-1), xexp = -n;
@@ -70,7 +70,7 @@ void _Ldtob(_Pft *px, char code)
             if (0 < (gen -= NDIG))
                 ldval = (ldval - (long double)lo) * 1e8L;
             for (p += NDIG, j = NDIG; 0 < lo && 0 <= --j; ) { /* convert NDIG digits */
-                ldiv t qr = ldiv(lo, 10);
+                ldiv_t qr = ldiv(lo, 10);
 
                 *--p = qr.rem + '0', lo = qr.quot;
             }
@@ -78,7 +78,7 @@ void _Ldtob(_Pft *px, char code)
                 *--p = '0';
         }
         gen = p - &ac[1];
-        for (p = &ac[l], xexp += NDIG-1; *p == '0'; ++p)
+        for (p = &ac[1], xexp += NDIG-1; *p == '0'; ++p)
             --gen, --xexp; /* correct xexp */
         nsig = px->prec + (code == 'f' ? xexp + 1
             : code == 'e' || code == 'E' ? 1 : 0);
@@ -88,9 +88,9 @@ void _Ldtob(_Pft *px, char code)
             const char drop = nsig < gen && '5' <= p[nsig] ? '9' : '0';
             int n;
 
-            for (n = nsig; p[--n] -- drop; )
+            for (n = nsig; p[--n] == drop; )
                 --nsig;
-            if (drop == ' 9')
+            if (drop == '9')
                 ++p[n];
             if (n < 0)
                 --p, ++nsig, ++xexp;

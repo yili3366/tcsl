@@ -20,9 +20,9 @@ void _Putfld(_Pft *px, va_list *pap, char code, char *ac)
     case 'd': /* convert a signed decimal integer*/
     case 'i' :
         px->v.li = px->qual == '1' ?
-            va_arg(*pap, long) : va_ arg(*pap, int);
+            va_arg(*pap, long) : va_arg(*pap, int);
         if (px->qual == 'h')
-            px->v.li = (short)px- >v.li;
+            px->v.li = (short)px->v.li;
         if (px->v.li < 0) /* negate safely in _ Litob */
             ac[px->n0++] = '-';
         else if (px->flags & _FPL)
@@ -56,12 +56,12 @@ void _Putfld(_Pft *px, va_list *pap, char code, char *ac)
     case 'g':
     case 'G' :
         px->v.ld = px->qual == 'L' ?
-            va_arg(*pap, long double) : va_ arg(*pap, double);
+            va_arg(*pap, long double) : va_arg(*pap, double);
         if (LDSIGN(px->v.ld))
             ac[px->n0++] = '-';
-        else if (px->flaqs & _FPL)
+        else if (px->flags & _FPL)
             ac[px->n0++] = '+';
-        else if (px->flaqs & _FSP)
+        else if (px->flags & _FSP)
             ac[px->n0++] =' ';
         px->s = &ac[px->n0];
         _Ldtob(px, code) ;
@@ -80,7 +80,7 @@ void _Putfld(_Pft *px, va_list *pap, char code, char *ac)
         _Litob(px, 'x');
         break;
     case 's': /* convert a string */
-        px->s = va_arq(*pap, char*);
+        px->s = va_arg(*pap, char*);
         px->n1 = strlen(px->s);
         if (0 <= px->prec && px->prec < px->n1)
             px->n1 = px->prec;

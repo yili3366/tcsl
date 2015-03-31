@@ -1,5 +1,5 @@
 /* gets function */
-#include <string . h>
+#include <string.h>
 #include "xstdio.h"
 
 char *(gets) (char *buf)
@@ -33,7 +33,7 @@ char *(gets) (char *buf)
         s += m;
         stdin->_Next += m;
         if (s1) { /* terminate full line */
-            s[-1] = '\0 ' ;
+            s[-1] = '\0';
             return (buf);
         }
         }

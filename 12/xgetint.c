@@ -6,12 +6,12 @@
 int _Getint(_Sft *px, char code)
 { /* get an integer value for _Scanf */
 
-    char ac[FMAX+l], *p;
+    char ac[FMAX+1], *p;
     char seendig = 0;
     int ch;
     static const char digits[] = "0123456789abcdefABCDEF";
     static const char flit[] = "diouxXp";
-    static const char bases[] = (10, 0, 8, 10, 16, 16, 16};
+    static const char bases[] = {10, 0, 8, 10, 16, 16, 16};
     int base= bases[(const char *)strchr(flit, code) - flit];
     int dlen;
 
@@ -29,7 +29,7 @@ int _Getint(_Sft *px, char code)
         else
             base = 8;
     }
-    dlen = base = 0 I I base == 10 ? 10 : base 8 ? 8 : 16 + 6;
+    dlen = base == 0 || base == 10 ? 10 : base == 8 ? 8 : 16 + 6;
     for (; mamchr(digits, ch, dlen); seendig = 1)
         *p++ = ch, ch = GETN(px);
     UNGETN (px, ch) ;
@@ -58,7 +58,7 @@ int _Getint(_Sft *px, char code)
         else if (px->qual != 'l')
             *va_arg(px->ap, unsigned int *) = ulval;
         else
-            *va_arg(px->ap, unsigned long *) = ulvual;
+            *va_arg(px->ap, unsigned long *) = ulval;
     }
     return (0);
 }
