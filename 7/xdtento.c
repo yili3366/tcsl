@@ -1,6 +1,4 @@
 /* Dtento function -- IEEE 754 version */
-
-#include "errno.h"
 #include "float.h"
 #include "xmath.h"
 
@@ -9,7 +7,7 @@
 /* static data */
 static const double pows[] = {
     1e1, 1e2, 1e4, 1e8, 1e16, 1e32,
-#if Ox100 < DBIAS /* assume IEEE 754 8-byte */
+#if 0x100 < DBIAS /* assume IEEE 754 8-byte */
     1e64, 1e128, 1e256,
 #endif
 };

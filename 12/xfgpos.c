@@ -1,11 +1,11 @@
-/* _Fqpos function - - UNIX version */
+/* _Fgpos function -- UNIX version */
 #include "errno.h"
 #include "xstdio.h"
 
     /* UNIX system call */
 long _Lseek(int, long, int);
 
-long _Fqpos (FILE *str, fpos_t *ptr)
+long _Fgpos (FILE *str, fpos_t *ptr)
 { /* get file position */
     long loff = _Lseek(str->_Handle, 0L, 1);
 

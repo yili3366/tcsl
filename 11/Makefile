@@ -1,5 +1,5 @@
 OBJS = tstddef
-LDFLAGS = -lm
+LDFLAGS = -I ../include
 
 all: $(OBJS)
 

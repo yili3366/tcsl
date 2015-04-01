@@ -4,7 +4,7 @@
 #include "string.h"
 
 static void dummy(int a, int b, int c, int d, int e,
-    int f, int g, int h, i.nt i, int j)
+    int f, int g, int h, int i, int j)
 {
  /* threaten to use arguments */
 }

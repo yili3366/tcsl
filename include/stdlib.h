@@ -49,17 +49,17 @@ void free(void *);
 char *getenv(const char *);
 long labs(long);
 ldiv_t ldiv(long, long);
-void *ma11oc(size_t);
+void *malloc(size_t);
 int mblen(const char*, size_t);
 size_t mbstowcs(wchar_t *, const char*, size_t);
 int mbtowc(wchar_t *, const char*, size_t);
 void qsort(void *, size_t, size_t, _Cmpfun *);
 int rand(void);
-void *rea11oc(void *, size_t);
+void *realloc(void *, size_t);
 void srand(unsigned int);
 double strtod(const char *, char **);
 long strtol(const char*, char**, int);
-unsigned long strtou1(const char*, char**, int);
+unsigned long strtoul(const char*, char**, int);
 int system(const char*);
 size_t wcstombs(char *, const wchar_t *, size_t);
 int wctomb (char *, wchar_t);
@@ -67,7 +67,7 @@ int _Mbtowc(wchar_t *, const char *, size_t, _Mbsave *);
 double _Stod(const char *, char **);
 unsigned long _Stoul(const char *, char **, int);
 int _Wctomb(char *, wchar_t, char *);
-extern char _Mbcuxmax, _Wcxtomb;
+extern char _Mbcurmax, _Wcxtomb;
 extern _Mbsave _Mbxlen, _Mbxtowc;
 extern unsigned long _Randseed;
 
@@ -75,10 +75,10 @@ extern unsigned long _Randseed;
 #define atof(s) _Stod(s, 0)
 #define atoi(s) (int)_Stoul(s, 0, 10)
 #define atol(s) (long)_Stoul(s, 0, 10)
-#define mblen(s, n) _Mbtowc(O, s, n, &_Mbx1en)
+#define mblen(s, n) _Mbtowc(0, s, n, &_Mbxlen)
 #define mbtowc(pwc, s, n) _Mbtowc(pwc, s, n, &_Mbxtowc)
 #define srand(seed) (void) (_Randseed = (seed))
 #define strtod(s, endptr) _Stod(s, endptr)
-#define strtoul(s, endptr, base) _Stou1(s, endptr, base)
+#define strtoul(s, endptr, base) _Stoul(s, endptr, base)
 #define wctomb(s, wchar) _Wctomb(s, wchar, &_Wcxtomb)
 #endif

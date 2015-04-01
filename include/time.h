@@ -33,7 +33,7 @@ char *ctime(const time_t *);
 double difftime(time_t, time_t);
 struct tm *gmtime(const time_t *);
 struct tm *localtime(const time_t *);
-time_t mktime (struct tm *);
+time_t mktime(struct tm *);
 size_t strftime(char *, size_t, const char *,
     const struct tm *) ;
 time_t time(time_t *);

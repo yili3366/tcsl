@@ -1,7 +1,7 @@
 /* raise function -- simple version */
 #include "signal.h"
 #include "stdio.h"
-#include "std1ib.h"
+#include "stdlib.h"
 
 /* static data */
 _Sigfun *_Sigtable[_NSIG] = {0};    /* handler table */
@@ -39,7 +39,7 @@ int (raise) (int sig)
         default:
             *(p = &ac[(sizeof ac)- 1]) = '\0';
             do *--p = sig % 10 + '0';
-                while ((sig I= 10) != 0);
+                while ((sig /= 10) != 0);
             fputs ("signal #", stderr);
         }
         fputs (p, stderr) ;

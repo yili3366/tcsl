@@ -37,14 +37,18 @@ int main()
     static char abc[] = "abcdefghijklmnopqrstuvwxyz";
     static int rmax = RAND_MAX;
 
+printf("file %s, line %d\n", __FILE__, __LINE__);
     assert(32767 <= rmax);
-    assert (1 <= MB_CUR_MAX && MB_CUR_MAX <= MB_LEN_MAX);
+    assert(1 <= MB_CUR_MAX && MB_CUR_MAX <= MB_LEN_MAX);
     assert((s1 = malloc(sizeof(abc))) != NULL);
-    strcpy (s1, abc) ;
+printf("file %s, line %d\n", __FILE__, __LINE__);
+    strcpy(s1, abc);
+printf("file %s, line %d\n", __FILE__, __LINE__);
     assert((s2 = calloc(sizeof(abc), 1)) != NULL && s2[0] == '\0');
     assert(memcmp(s2, s2 + 1, sizeof (abc) - 1) == 0);
     assert(strcmp(s1, abc) == 0);
     assert((s1 = realloc(s1, 2 * sizeof (abc) - 1)) !=NULL);
+printf("file %s, line %d\n", __FILE__, __LINE__);
     strcat(s1, abc);
     assert(strrchr(s1, 'z') == s1 + 2 * strlen(abc) - 1);
     free(s2);
@@ -77,7 +81,7 @@ int main()
     assert(strtoul("0xFfg", &s1, 16) == 255 && s1 != NULL && *s1 == 'g');
     assert(mbstowcs(wcs, "abc", 4) == 3 && wcs[1] == 'b');
     assert(wcstombs(buf, wcs, 10) == 3 && strcmp(buf, "abc") == 0);
-    mblen(NULL, 0) ;
+    mblen(NULL, 0);
     wctomb(NULL, 0);
     assert(mblen ("abc", 4) == 1);
     assert(mbtowc(&wcs[0], "abc", 4) == 1 && wcs[0] == 'a');

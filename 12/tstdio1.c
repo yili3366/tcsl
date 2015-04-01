@@ -1,6 +1,6 @@
  /* test stdio functions, part 1 */
-#include "assert.h"
 #include "errno.h"
+#include "assert.h"
 #include "float.h"
 #include "math.h"
 #include "stdarg.h"

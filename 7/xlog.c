@@ -14,17 +14,17 @@ static const double q[3] = {
     -0.76949932108494879777e+3
 };
 
-static const double c1 = {22713.0 / 32768.0};
-static const double c2 = {1.428606820309417232e-6};
+static const double c1 = (22713.0 / 32768.0);
+static const double c2 = (1.428606820309417232e-6);
 static const double loge = 0.43429448190325182765;
-static const double rthalf = {0.70710678118654752440};
+static const double rthalf = (0.70710678118654752440);
 
 double _Log(double x, int decflag)
 {
     /* compute ln(x) */
     short xexp;
 
-    switch (_Dunscale (&xexp, &x)) { /* test for special codes */
+    switch (_Dunscale(&xexp, &x)) { /* test for special codes */
     case NAN:
         errno = EDOM;
         return (x);

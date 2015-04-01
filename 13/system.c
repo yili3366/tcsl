@@ -1,9 +1,10 @@
 /* system function -- UNIX version */
 #include "stdlib.h"
+#include "yfuns.h"
 
 /* UNIX system calls */
 int _Execl(const char*, const char*, ...);
-int _Pork(void);
+int _Fork(void);
 int _Wait(int *);
 
 int (system)(const char *s)

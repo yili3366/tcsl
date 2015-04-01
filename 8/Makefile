@@ -1,9 +1,9 @@
 OBJS = tsetjmp
-LDFLAGS = -lm
+LDFLAGS = -lm -I ../include
 
 all: $(OBJS)
 
-tsetjmp: tsetjmp.c
+tsetjmp: tsetjmp.c longjmp.c setjmp.c
 	$(CC) $(LDFLAGS) -o $@ $^
 
 .PHONY: clean

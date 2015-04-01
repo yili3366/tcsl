@@ -4,6 +4,8 @@
 #ifndef _YVALS
 #include "yvals.h"
 #endif
+
+#include "yfuns.h"
     /* macros */
 #define NULL _NULL
 #define _IOFBF 0

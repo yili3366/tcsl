@@ -1,6 +1,6 @@
 /* test string functions */
-#include "assert.h"
 #include "errno.h"
+#include "assert.h"
 #include "stdio.h"
 #include "string.h"
 

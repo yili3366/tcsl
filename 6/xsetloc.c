@@ -4,6 +4,8 @@
 #include "limits.h"
 #include "ctype.h"
 
+extern char _Mbcurmax;
+
 _Linfo *_Setloc(int cat, _Linfo *p)
 {
     /* set category for locale */

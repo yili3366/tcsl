@@ -9,7 +9,7 @@ static _Cell **findmem(size_t size)
 {
     _Cell *q, **qb; /* find storaqe */
 
-    for (; ; ) { /* check freed space :first */
+    for (; ; ) { /* check freed space first */
         if ((qb = _Aldata._Plast) == NULL) { /* take it from the top */
             for (qb = &_Aldata._Head; *qb;
                 qb = &(*qb)->_Next)

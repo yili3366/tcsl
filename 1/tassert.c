@@ -13,11 +13,11 @@ static void field_abort(int sig)
     /* handle SIGABRT*/
     if (val == 1) {
         /* expected result */
-        puts("SUCCESS testing <assert.h>");
+        puts("SUCCESS testing "assert.h"");
         exit(EXIT_SUCCESS);
     } else {
         /* unexpected result */
-        puts("FAILURE testing <assert.h>");
+        puts("FAILURE testing "assert.h"");
         exit(EXIT_FAILURE);
     }
 }
@@ -32,7 +32,7 @@ static void dummy()
 }
 
 #undef NDEBUG
-#include <assert.h>
+#include "assert.h"
 
 int main()
 {

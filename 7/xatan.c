@@ -28,9 +28,9 @@ static const double q[5] = {
     0.41066306682575781263e+2
 };
 
-static const double fold= {0.26794919243112270647};
-static const double sqrt3 = {1.73205080756887729353};
-static const double sqrt3m1 = {0.73205080756887729353};
+static const double fold= (0.26794919243112270647);
+static const double sqrt3 = (1.73205080756887729353);
+static const double sqrt3m1 = (0.73205080756887729353);
 
 double _Atan(double x, unsigned short idx)
 {

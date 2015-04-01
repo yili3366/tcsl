@@ -1,5 +1,7 @@
  /* Getmem function -- UNIX version */
 #include "xalloc.h"
+#include "yfuns.h"
+
 /* UNIX system call */
 void *_Sbrk(int);
 

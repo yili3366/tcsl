@@ -30,7 +30,7 @@ _Dvals _Dbl = {
     {DINIT(_DBIAS-DFRAC+2<<_DOFF, 0)},      /* DBL_EPSILLON */
     {DINIT((DMAXE<<_DOFF)-1,~0)},           /* DBL_MAX */
     {DINIT(1<<_DOFF, 0)},                   /* DBL_MIN */
-    };
+};
 _Dvals _Flt = {
     (int)((FFRAC-1)*LOG2),                  /* FLT_DIG */
     (int)FFRAC,                             /* FLT_MANT_DIG */
@@ -41,7 +41,7 @@ _Dvals _Flt = {
     {FINIT(_FBIAS-FFRAC+2<<_FOFF, 0)},      /* FLT_EPSILLON */
     {FINIT((FMAXE<<_FOFF)-1,~0)},           /* FLT_MAX */
     {FINIT(1<<_FOFF, 0)},                   /* FLT_MIN */
-    };
+};
 #if _DLONG
 _Dvals_Ldb1 = {
     (int)((LFRAC-1)*LOG2),                  /* LDBL_DIG */
@@ -66,4 +66,3 @@ _Dvals _Ldbl = {
     {DINIT(1<<_DOFF,0)},                    /* LDBL_MIN */
 };
 #endif // _DLONG
-

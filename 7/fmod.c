@@ -19,12 +19,11 @@ double (fmod) (double x, double y)
         if (y < 0.0)
             y = -y;
         if (x < 0.0) {
-            x = -x;
-            neg = 1;
+            x = -x, neg = 1;
         } else
             neg= 0;
 
-        for (t = y, _Dunscale(&ychar, &t), n = 0; ; ) { /* subtract IYI until lxi<IYI */
+        for (t = y, _Dunscale(&ychar, &t), n = 0; ; ) { /* subtract |Y| until |x|<|Y| */
             short xchar;
 
             t = x;

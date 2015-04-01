@@ -13,7 +13,7 @@ short _Dunscale(short *pex, double *px)
             || ps[_D2] || ps[_D3] ? NAN : INF);
     } else if (0 < xchar || (xchar = _Dnorm(ps)) != 0) {
          /* finite, reduce to [1/2, 1) */
-        ps[_D0] = ps[_D0] & -_DMASK | _DBIAS << _DOFF;
+        ps[_D0] = ps[_D0] & ~_DMASK | _DBIAS << _DOFF;
         *pex = xchar - _DBIAS;
         return (FINITE);
     } else {

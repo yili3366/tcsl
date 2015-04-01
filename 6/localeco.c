@@ -3,7 +3,7 @@
 #include "locale.h"
 
 /* static data */
-static char null [] = "" ;
+static char null[] = "";
 struct lconv _Locale = {
 /* LC_MONETARY */
     null,        /* eurrency_symbol */

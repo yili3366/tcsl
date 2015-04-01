@@ -1,6 +1,6 @@
 /* strtol function */
-#include "ctype.h"
 #include "errno.h"
+#include "ctype.h"
 #include "limits.h"
 #include "stdlib.h"
 

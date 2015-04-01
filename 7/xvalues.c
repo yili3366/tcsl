@@ -2,7 +2,7 @@
 #include "xmath.h"
 
     /* macros */
-#define NBITS (48 + _DOFF)
+#define NBITS (48+_DOFF)
 #if _D0
 #define INIT(w0) 0, 0, 0, w0
 #else

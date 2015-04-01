@@ -26,7 +26,10 @@ typedef unsigned short _Wchart;
 typedef int _Ptrdifft;
 typedef unsigned int _Sizet;
     /* setjmp properties */
-#define _NSETJMP     80
+#define _JBFP       1         /* int offset of frame pointer */
+#define _JBMOV      60        /* number of bytes in calling context */
+#define _JBOFF      4         /* byte offset of calling context */
+#define _NSETJMP    17
     /* signal propertiese */
 #define _SIGABRT    6
 #define _SIGMAX     32
@@ -34,6 +37,8 @@ typedef unsigned int _Sizet;
 #define _FNAMAX     64
 #define _FOPMAX     16
 #define _TNAMAX     16
+    /* stdlib properteis */
+#define _EXFAIL     1
     /* storage alignment properties */
 #define _AUPBND     3U
 #define _ADNBND     3U

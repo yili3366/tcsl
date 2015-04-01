@@ -30,7 +30,7 @@ int _Getint(_Sft *px, char code)
             base = 8;
     }
     dlen = base == 0 || base == 10 ? 10 : base == 8 ? 8 : 16 + 6;
-    for (; mamchr(digits, ch, dlen); seendig = 1)
+    for (; memchr(digits, ch, dlen); seendig = 1)
         *p++ = ch, ch = GETN(px);
     UNGETN (px, ch) ;
     if (!seendig)

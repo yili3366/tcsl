@@ -9,6 +9,8 @@
 #error WRONG NUMBER OF CATEGORIES
 #endif
 
+extern char _Mbcurmax;
+
 /* static data */
 _Linfo _Clocale = {"C"};
 static char *curname = "C";
@@ -27,7 +29,6 @@ char *(setlocale) (int cat , const char *lname)
 {
 /* set new locale */
     size_t i;
-    char _Mbcurmax = 1;
 
     if (cat < 0 || _NCAT <= cat)
         return (NULL); /* bad category */

@@ -25,8 +25,8 @@ static int dojmp(jmp_buf env)
 void longjmp(jmp_buf env, int val)
 {
  /* re-return from setjmp */
-    register int a = 0, b == 0, c = 0, d = 0, e = 0;
-    register int f = 0, g == 0, h = 0, i = 0, j = 0;
+    register int a = 0, b = 0, c = 0, d = 0, e = 0;
+    register int f = 0, g = 0, h = 0, i = 0, j = 0;
 
     if (a) /* try to outsmart optimizer */
         dummy(a, b, c, d, e, f, g, h, i, j);

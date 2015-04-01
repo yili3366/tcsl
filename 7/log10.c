@@ -1,7 +1,7 @@
-/* 1ogl0 function */
+/* 1og10 function */
 #include "math.h"
 
-double (log1O) (double x)
+double (log10) (double x)
 {   /* compute log10(x) */
     return (_Log(x, 1));
 }

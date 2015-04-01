@@ -1,8 +1,8 @@
 /* strerror function */
-#include "string.h"
 #include "errno.h"
+#include "string.h"
 
-char *_Strerror (int errcode, char *buf)
+char *_Strerror(int errcode, char *buf)
 { /* copy error message into buffer as needed */
 
     static char sbuf[] = { "error #xxx" };
