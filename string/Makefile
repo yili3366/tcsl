@@ -1,18 +1,8 @@
-SRC = memchr.c memcpy.c memcmp.c memmove.c memset.c \
-      strcat.c strchr.c  strcmp.c strcoll.c strcpy.c \
-      strcspn.c strerror.c strlen.c strncat.c strncmp.c \
-      strncpy.c strpbrk.c strspn.c strstr.c strtok.c \
-      strxfrm.c xstrxfrm.c ../6/xstate.c
-OBJS = tstring
-CFLAGS = -g
-LDFLAGS = -I ../include -L ../lib -lassert -lerrno \
-          -llocale -lsetjmp -lstdio -lstring -lctype \
-          -lfloat -lmath -lsignal -lstdlib -ltime
+include ../Makefile.in
 
-all: $(OBJS)
+all: lib
 
-tstring: tstring.c ../3/errno.c
-	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $^
+lib: libstring.so
 
 memchr.o    :memchr.c
 	$(CC) -fPIC -g -c -Wall $^ $(LDFLAGS)
@@ -66,9 +56,10 @@ libstring.so: memchr.o memcmp.o memcpy.o memmove.o \
               strcoll.o strcpy.o strcspn.o strerror.o \
               strlen.o strncat.o strncmp.o strncpy.o \
               strpbrk.o strrchr.o strspn.o strstr.o \
-              strtok.o strxfrm.o xstrxfrm.o
+              strtok.o strxfrm.o xstrxfrm.o ../errno/errno.o
 	$(CC) -shared -Wl,-soname,$@ -o $@  $^ $(CFLAGS) $(LDFLAGS)
+	mv $@ ../lib/
 
 .PHONY: clean
 clean:
-	rm $(OBJS) *.so *.o
+	- rm *.so *.o

@@ -1,22 +1,18 @@
-OBJS = tsignal
-CFLAGS = -g
-LDFLAGS = -I ../include -L ../lib -lassert -lerrno \
-          -llocale -lsetjmp -lstdio -lstring -lctype \
-          -lfloat -lmath -lsignal -lstdlib -ltime
+include ../Makefile.in
 
-all: $(OBJS)
+all: lib
 
-tsignal: tsignal.c ../3/errno.c
-	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $^
+lib: libsignal.so
 
 raise.o : raise.c
 	$(CC) -fPIC -g -c -Wall $^ $(LDFLAGS)
 signal.o : signal.c
 	$(CC) -fPIC -g -c -Wall $^ $(LDFLAGS)
 
-libsignal.so : raise.o signal.o
+libsignal.so : raise.o signal.o ../errno/errno.o
 	$(CC) -shared -Wl,-soname,$@ -o $@  $^ $(CFLAGS) $(LDFLAGS)
+	mv $@ ../lib/
 
 .PHONY: clean
 clean:
-	rm $(OBJS) *.o *.so
+	- rm  *.o *.so

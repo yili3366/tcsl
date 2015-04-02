@@ -1,23 +1,8 @@
-SRC = atan.c asin.c ../4/xfloat.c atan2.c ceil.c cos.c cosh.c exp.c \
-      fabs.c floor.c fmod.c frexp.c ldexp.c log10.c log.c modf.c \
-      pow.c sin.c sinh.c sqrt.c tan.c tanh.c xasin.c xatan.c xdint.c \
-      xdnorm.c xdscale.c xdtento.c xdtest.c xdunscal.c xexp.c \
-      xldunsca.c xlog.c xpoly.c xsin.c xvalues.c ../3/errno.c
-OBJS = tmath1 tmath2 tmath3
-LDFLAGS = -I ../include -L ../lib -lassert -lerrno \
-          -llocale -lsetjmp -lstdio -lstring -lctype \
-          -lfloat -lmath -lsignal -lstdlib -ltime
+include ../Makefile.in
 
-CFLAGS = -g
+all: lib
 
-all: $(OBJS)
-
-tmath1: tmath1.c ../3/errno.c
-	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $^
-tmath2: tmath2.c ../3/errno.c
-	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $^
-tmath3: tmath3.c ../3/errno.c
-	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $^
+lib: libmath.so
 
 acos.o     :acos.c
 	$(CC) -fPIC -g -c -Wall $^ $(LDFLAGS)
@@ -91,8 +76,6 @@ xsin.o     :xsin.c
 	$(CC) -fPIC -g -c -Wall $^ $(LDFLAGS)
 xvalues.o  :xvalues.c
 	$(CC) -fPIC -g -c -Wall $^ $(LDFLAGS)
-errno.o    :../3/errno.c
-	$(CC) -fPIC -g -c -Wall $^ $(LDFLAGS)
 
 libmath.so: acos.o asin.o atan2.o atan.o ceil.o \
             cosh.o cos.o exp.o fabs.o floor.o fmod.o \
@@ -100,8 +83,10 @@ libmath.so: acos.o asin.o atan2.o atan.o ceil.o \
             sinh.o sin.o sqrt.o tanh.o tan.o xasin.o  \
             xatan.o xdint.o xdnorm.o xdscale.o xdtento.o \
             xdtest.o xdunscal.o xexp.o xldunsca.o xlog.o \
-            xpoly.o xsin.o xvalues.o errno.o
+            xpoly.o xsin.o xvalues.o ../errno/errno.o
 	$(CC) -shared -Wl,-soname,$@ -o $@  $^ $(CFLAGS) $(LDFLAGS)
+	mv $@ ../lib/
+
 .PHONY: clean
 clean:
-	rm $(OBJS) *.so *.o
+	- rm  *.so *.o

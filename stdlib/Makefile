@@ -1,23 +1,8 @@
-SRC = abort.c atof.c bsearch.c exit.c labs.c mblen.c \
-      qsort.c srand.c strtoul.c wcstombs.c xmbtowc.c \
-      abs.c atoi.c calloc.c free.c ldiv.c mbstowcs.c \
-      rand.c strtod.c system.c wctomb.c xstoul.c xstod.c \
-      atexit.c atol.c div.c getenv.c malloc.c mbtowc.c \
-      realloc.c strtol.c xgetmem.c xwctomb.c ../3/errno.c \
-      ../2/xtolower.c ../2/xctype.c ../6/localeco.c \
-      ../6/xstate.c ../7/xdunscal.c ../7/xdtento.c \
-      ../7/xvalues.c ../7/xdscale.c ../7/xdnorm.c ../12/xfiles.c
+include ../Makefile.in
 
-OBJS = tstdlib
-CFLAGS = -g
-LDFLAGS = -I ../include -L ../lib -lassert -lerrno \
-          -llocale -lsetjmp -lstdio -lstring -lctype \
-          -lfloat -lmath -lsignal -lstdlib -ltime
+all: lib
 
-all: $(OBJS)
-
-tstdlib: tstdlib.c ../3/errno.c
-	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $^
+lib: libstdlib.so
 
 abort.o     :abort.c
 	$(CC) -fPIC -g -c -Wall $^ $(LDFLAGS)
@@ -85,8 +70,6 @@ xstoul.o    :xstoul.c
 	$(CC) -fPIC -g -c -Wall $^ $(LDFLAGS)
 xwctomb.o   :xwctomb.c
 	$(CC) -fPIC -g -c -Wall $^ $(LDFLAGS)
-errno.o   :../3/errno.c
-	$(CC) -fPIC -g -c -Wall $^ $(LDFLAGS)
 
 libstdlib.so :abort.o abs.o atexit.o atof.o atoi.o \
               atol.o bsearch.o calloc.o div.o exit.o \
@@ -94,9 +77,10 @@ libstdlib.so :abort.o abs.o atexit.o atof.o atoi.o \
               mblen.o mbstowcs.o mbtowc.o qsort.o rand.o \
               realloc.o srand.o strtod.o strtol.o strtoul.o \
               system.o wcstombs.o wctomb.o xgetmem.o \
-              xmbtowc.o xstod.o xstoul.o xwctomb.o errno.o
+              xmbtowc.o xstod.o xstoul.o xwctomb.o ../errno/errno.o
 	$(CC) -shared -Wl,-soname,$@ -o $@  $^ $(CFLAGS) $(LDFLAGS)
+	mv $@ ../lib/
 
 .PHONY: clean
 clean:
-	rm $(OBJS) *.so *.o
+	- rm  *.so *.o

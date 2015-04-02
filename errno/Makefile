@@ -1,18 +1,15 @@
-OBJS = terrno
-CFLAGS = -g
-LDFLAGS = -I ../include -L ../lib -lassert -lerrno \
-          -llocale -lsetjmp -lstdio -lstring -lctype \
-          -lfloat -lmath -lsignal -lstdlib -ltime
+include ../Makefile.in
 
-all: $(OBJS)
+all: lib
 
-terrno: terrno.c errno.c
-	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $^
+lib: liberrno.so
+
 errno.o: errno.c
 	$(CC) -fPIC -g -c -Wall $^ $(CFLAGS) $(LDFLAGS)
 liberrno.so: errno.o
 	$(CC) -shared -Wl,-soname,$@ -o $@  $^ $(CFLAGS) $(LDFLAGS)
+	mv $@ ../lib/
 
 .PHONY: clean
 clean:
-	rm $(OBJS) *.so *.o
+	- rm *.so *.o

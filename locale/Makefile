@@ -1,11 +1,8 @@
-SRC = ../12/xfiles.c ../13/xmbtowc.c ../15/xgetzone.c  ../15/xgettime.c ../15/xgentime.c ../15/xstrftim.c ../15/asctime.c ../2/xctype.c ../2/xtolower.c ../2/xtoupper.c localeco.c setlocal.c xdefloc.c xfmtval.c xfreeloc.c xgetloc.c  xloctab.c xlocterm.c xmakeloc.c xreadloc.c xsetloc.c xstate.c
-OBJS = tlocale
-CFLAGS = -g
-LDFLAGS = -I ../include -L ../lib -lassert -lerrno \
-          -llocale -lsetjmp -lstdio -lstring -lctype \
-          -lfloat -lmath -lsignal -lstdlib -ltime
+include ../Makefile.in
 
-all: $(OBJS)
+all: lib
+
+lib: liblocale.so
 
 localeco.o : localeco.c
 	$(CC) -fPIC -g -c -Wall $^ $(CFLAGS) $(LDFLAGS)
@@ -34,12 +31,10 @@ xstate.o   : xstate.c
 
 liblocale.so: localeco.o setlocal.o xdefloc.o xfmtval.o xfreeloc.o \
               xgetloc.o xloctab.o xlocterm.o xmakeloc.o xreadloc.o \
-              xsetloc.o xstate.o
+              xsetloc.o xstate.o ../errno/errno.o
 	$(CC) -shared -Wl,-soname,$@ -o $@  $^ $(CFLAGS) $(LDFLAGS)
-
-tlocale: tlocale.c ../3/errno.c
-	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $^
+	mv $@ ../lib/
 
 .PHONY: clean
 clean:
-	rm $(OBJS) *.o *.so
+	- rm  *.o *.so

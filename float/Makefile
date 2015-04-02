@@ -1,18 +1,16 @@
-OBJS = tfloat
-CFLAGS = -g
-LDFLAGS = -I ../include -L ../lib -lassert -lerrno \
-          -llocale -lsetjmp -lstdio -lstring -lctype \
-          -lfloat -lmath -lsignal -lstdlib -ltime
+include ../Makefile.in
 
-all: $(OBJS)
+all: lib
 
-tfloat: tfloat.c ../3/errno.c
-	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $^
+lib: libfloat.so
+
 xfloat.o: xfloat.c
 	$(CC) -fPIC -g -c -Wall $^ $(LDFLAGS)
-libfloat.so: xfloat.o
+
+libfloat.so: xfloat.o ../errno/errno.o
 	$(CC) -shared -Wl,-soname,$@ -o $@  $^ $(CFLAGS) $(LDFLAGS)
+	mv $@ ../lib/
 
 .PHONY: clean
 clean:
-	rm $(OBJS) *.so *.o
+	- rm  *.so *.o

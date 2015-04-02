@@ -1,21 +1,16 @@
-SRC = xassert.c ../12/xfiles.c ../3/errno.c
-OBJS = tassert
-CFLAGS = -g
-LDFLAGS = -I ../include -L ../lib -lassert -lerrno \
-          -llocale -lsetjmp -lstdio -lstring -lctype \
-          -lfloat -lmath -lsignal -lstdlib -ltime
+include ../Makefile.in
 
-all: $(OBJS)
+all: lib
 
-libassert.so: xassert.o
-	$(CC) -shared -Wl,-soname,$@ -o $@  $^ $(CFLAGS) $(LDFLAGS)
+lib: libassert.so
 
 xassert.o: xassert.c
 	$(CC) -fPIC -g -c -Wall $^ $(CFLAGS) $(LDFLAGS)
 
-tassert: tassert.c $(SRC)
-	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $^
+libassert.so: xassert.o ../errno/errno.o
+	$(CC) -shared -Wl,-soname,$@ -o $@  $^ $(CFLAGS) $(LDFLAGS)
+	mv $@ ../lib/
 
 .PHONY: clean
 clean:
-	@rm $(OBJS) *.o *.so
+	- rm  *.o *.so
