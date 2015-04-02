@@ -14,7 +14,7 @@
 #define NEWADDR(p, q, ty) \
     (ADDR(p, q, ty) != ADDR(&_Clocale, q, ty))
 #define MAXLIN 256
-#define TABSIZ ( (UCHAR_MAX + 2) * sizeof (short))
+#define TABSIZ ((UCHAR_MAX + 2) * sizeof (short))
 /* type definitions */
 typedef const struct {
     const char *_Name;
@@ -45,14 +45,14 @@ typedef struct _Linfo {
 
 /* declarations */
 const char *_Defloc(void);
-void _Freeloc (_Linfo *) ;
+void _Freeloc (_Linfo *);
 _Linfo *_Getloc(const char*, const char*);
-int _Locterm(const char **, unsigned short *) ;
-int _Locvar (char, short) ;
-int _Makeloc (FILE *, char *, _Linfo *) ;
+int _Locterm(const char **, unsigned short *);
+int _Locvar (char, short);
+int _Makeloc (FILE *, char *, _Linfo *);
 _Locitem *_Readloc(FILE *, char*, const char**);
 _Linfo *_Setloc(int, _Linfo*);
 const char *_Skip(const char*);
 extern _Linfo _Clocale;
-extern _Locitem _Loctab[] ;
+extern _Locitem _Loctab[];
 #endif
