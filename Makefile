@@ -5,23 +5,29 @@ LIB_DIRS = assert ctype errno float locale math \
 
 BIN_DIRS = bin
 
-all:: lib bin libstdc.so
+SRCS = $(shell for DIR in $(LIB_DIRS); \
+      do \
+        ls $$DIR/*.c; \
+      done)
+OBJS = $(patsubst %.c,%.o,$(SRCS))
+
+#$(warning "SRCS is $(SRCS)")
+#$(warning "OBJS is $(OBJS)")
+
+all:: lib bin
 
 lib::
 	@for DIR in $(LIB_DIRS);  do (cd $$DIR; $(MAKE) all) done
-bin::
+bin: lib libstdc.so
 	@for DIR in $(BIN_DIRS);  do  (cd $$DIR; $(MAKE) all)  done
 
-libstdc.so: assert/*.o ctype/*.o errno/*.o float/*.o locale/*.o math/*.o \
-      setjmp/*.o signal/*.o stdio/*.o stdlib/*.o string/*.o time/*.o
-	$(CC) -shared -Wl,-soname,$@ -o $@  $^ $(CFLAGS) -I ../include
+libstdc.so: lib $(OBJS)
+	$(CC) -shared -Wl,-soname,$@ -o $@ $(OBJS) $(CFLAGS) -I ../include
+	echo $(OBJS)
 	mv $@ lib
 
-.PHONY: clean cleanlib cleanbin
-clean: cleanlib cleanbin
+.PHONY: clean
+clean:
 	- rm *.o *.so lib/*.so
-cleanlib:
 	@for DIR in $(LIB_DIRS); do (cd $$DIR; $(MAKE) clean) done
-
-cleanbin:
 	@for DIR in $(BIN_DIRS); do (cd $$DIR; $(MAKE) clean) done
