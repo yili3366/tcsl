@@ -46,7 +46,7 @@ libctype.so: isalnum.o isalpha.o iscntrl.o isdigit.o \
              isspace.o isupper.o isxdigit.o tolower.o \
              toupper.o xctype.o xtolower.o xtoupper.o \
              ../errno/errno.o
-	$(CC) -g -shared -Wl,-soname,$@ -o $@  $^ $(LDFLAGS)
+	$(CC) -g3 -gdwarf-2 -shared -Wl,-soname,$@ -o $@  $^ $(LDFLAGS)
 	mv $@ ../lib/
 
 .PHONY: clean

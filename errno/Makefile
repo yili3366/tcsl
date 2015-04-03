@@ -9,7 +9,7 @@ lib: liberrno.so
 errno.o: errno.c
 	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 liberrno.so: errno.o
-	$(CC) -g -shared -Wl,-soname,$@ -o $@  $^ -I ../include
+	$(CC) -g3 -gdwarf-2 -shared -Wl,-soname,$@ -o $@  $^ -I ../include
 	mv $@ ../lib/
 
 .PHONY: clean

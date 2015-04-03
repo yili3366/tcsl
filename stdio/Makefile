@@ -133,7 +133,7 @@ libstdio.so :clearerr.o fclose.o feof.o ferror.o \
              xfopen.o xfoprep.o xfrprep.o xfspos.o xfwprep.o \
              xgenld.o xgetfld.o xgetfloa.o xgetint.o xldtob.o  \
              xlitob.o xprintf.o xputfld.o xscanf.o ../errno/errno.o
-	$(CC) -g -shared -Wl,-soname,$@ -o $@  $^ $(LDFLAGS)
+	$(CC) -g3 -gdwarf-2 -shared -Wl,-soname,$@ -o $@  $^ $(LDFLAGS)
 	mv $@ ../lib/
 
 .PHONY: clean

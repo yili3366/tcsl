@@ -10,7 +10,7 @@ xfloat.o: xfloat.c
 	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 
 libfloat.so: xfloat.o ../errno/errno.o
-	$(CC) -g -shared -Wl,-soname,$@ -o $@  $^ $(LDFLAGS)
+	$(CC) -g3 -gdwarf-2 -shared -Wl,-soname,$@ -o $@  $^ $(LDFLAGS)
 	mv $@ ../lib/
 
 .PHONY: clean

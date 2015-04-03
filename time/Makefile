@@ -43,7 +43,7 @@ libtime.so : asctime.o clock.o ctime.o difftime.o \
              gmtime.o localtim.o mktime.o strftime.o \
              time.o xgentime.o xgetdst.o xgettime.o \
              xgetzone.o xisdst.o xstrftim.o xttotm.o ../errno/errno.o
-	$(CC) -g -shared -Wl,-soname,$@ -o $@  $^ $(LDFLAGS)
+	$(CC) -g3 -gdwarf-2 -shared -Wl,-soname,$@ -o $@  $^ $(LDFLAGS)
 	mv $@ ../lib/
 
 .PHONY: clean

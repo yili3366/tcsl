@@ -34,7 +34,7 @@ xstate.o   : xstate.c
 liblocale.so: localeco.o setlocal.o xdefloc.o xfmtval.o xfreeloc.o \
               xgetloc.o xloctab.o xlocterm.o xmakeloc.o xreadloc.o \
               xsetloc.o xstate.o ../errno/errno.o
-	$(CC) -g -shared -Wl,-soname,$@ -o $@  $^ $(LDFLAGS)
+	$(CC) -g3 -gdwarf-2 -shared -Wl,-soname,$@ -o $@  $^ $(LDFLAGS)
 	mv $@ ../lib/
 
 .PHONY: clean

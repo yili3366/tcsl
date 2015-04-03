@@ -59,7 +59,7 @@ libstring.so: memchr.o memcmp.o memcpy.o memmove.o \
               strlen.o strncat.o strncmp.o strncpy.o \
               strpbrk.o strrchr.o strspn.o strstr.o \
               strtok.o strxfrm.o xstrxfrm.o ../errno/errno.o
-	$(CC) -g -shared -Wl,-soname,$@ -o $@  $^ $(LDFLAGS)
+	$(CC) -g3 -gdwarf-2 -shared -Wl,-soname,$@ -o $@  $^ $(LDFLAGS)
 	mv $@ ../lib/
 
 .PHONY: clean

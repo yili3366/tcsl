@@ -80,7 +80,7 @@ libstdlib.so :abort.o abs.o atexit.o atof.o atoi.o \
               realloc.o srand.o strtod.o strtol.o strtoul.o \
               system.o wcstombs.o wctomb.o xgetmem.o \
               xmbtowc.o xstod.o xstoul.o xwctomb.o ../errno/errno.o
-	$(CC) -g -shared -Wl,-soname,$@ -o $@  $^ $(LDFLAGS)
+	$(CC) -g3 -gdwarf-2 -shared -Wl,-soname,$@ -o $@  $^ $(LDFLAGS)
 	mv $@ ../lib/
 
 .PHONY: clean

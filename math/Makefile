@@ -86,7 +86,7 @@ libmath.so: acos.o asin.o atan2.o atan.o ceil.o \
             xatan.o xdint.o xdnorm.o xdscale.o xdtento.o \
             xdtest.o xdunscal.o xexp.o xldunsca.o xlog.o \
             xpoly.o xsin.o xvalues.o ../errno/errno.o
-	$(CC) -g -shared -Wl,-soname,$@ -o $@  $^ $(LDFLAGS)
+	$(CC) -g3 -gdwarf-2 -shared -Wl,-soname,$@ -o $@  $^ $(LDFLAGS)
 	mv $@ ../lib/
 
 .PHONY: clean
