@@ -1,16 +1,18 @@
 include ../Makefile.in
 
+CFLAGS += -fPIC -g -c -Wall
+
 all: lib
 
 lib: libfloat.so
 
 xfloat.o: xfloat.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 
 libfloat.so: xfloat.o ../errno/errno.o
-	$(CC) -shared -Wl,-soname,$@ -o $@  $^ $(CFLAGS) -I ../include
+	$(CC) -g -shared -Wl,-soname,$@ -o $@  $^ $(LDFLAGS)
 	mv $@ ../lib/
 
 .PHONY: clean
 clean:
-	- rm  *.so *.o
+	- rm -fr *.so *.o

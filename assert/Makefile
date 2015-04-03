@@ -1,16 +1,18 @@
 include ../Makefile.in
 
+CFLAGS += -fPIC -g -c -Wall
+
 all: lib
 
 lib: libassert.so
 
 xassert.o: xassert.c
-	$(CC) -fPIC -g -c -Wall $^ $(CFLAGS) -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 
 libassert.so: xassert.o ../errno/errno.o
-	$(CC) -shared -Wl,-soname,$@ -o $@  $^ $(CFLAGS)  -I ../include
+	$(CC) -g -shared -Wl,-soname,$@ -o $@  $^ $(LDFLAGS)
 	mv $@ ../lib/
 
 .PHONY: clean
 clean:
-	- rm  *.o *.so
+	- rm -fr *.o *.so

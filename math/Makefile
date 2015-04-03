@@ -1,81 +1,83 @@
 include ../Makefile.in
 
+CFLAGS += -fPIC -g -c -Wall
+
 all: lib
 
 lib: libmath.so
 
 acos.o     :acos.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 asin.o     :asin.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 atan2.o    :atan2.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 atan.o     :atan.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 ceil.o     :ceil.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 cosh.o     :cosh.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 cos.o      :cos.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 exp.o      :exp.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 fabs.o     :fabs.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 floor.o    :floor.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 fmod.o     :fmod.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 frexp.o    :frexp.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 ldexp.o    :ldexp.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 log10.o    :log10.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 log.o      :log.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 modf.o     :modf.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 pow.o      :pow.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 sinh.o     :sinh.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 sin.o      :sin.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 sqrt.o     :sqrt.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 tanh.o     :tanh.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 tan.o      :tan.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 xasin.o    :xasin.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 xatan.o    :xatan.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 xdint.o    :xdint.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 xdnorm.o   :xdnorm.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 xdscale.o  :xdscale.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 xdtento.o  :xdtento.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 xdtest.o   :xdtest.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 xdunscal.o :xdunscal.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 xexp.o     :xexp.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 xldunsca.o :xldunsca.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 xlog.o     :xlog.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 xpoly.o    :xpoly.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 xsin.o     :xsin.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 xvalues.o  :xvalues.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 
 libmath.so: acos.o asin.o atan2.o atan.o ceil.o \
             cosh.o cos.o exp.o fabs.o floor.o fmod.o \
@@ -84,9 +86,9 @@ libmath.so: acos.o asin.o atan2.o atan.o ceil.o \
             xatan.o xdint.o xdnorm.o xdscale.o xdtento.o \
             xdtest.o xdunscal.o xexp.o xldunsca.o xlog.o \
             xpoly.o xsin.o xvalues.o ../errno/errno.o
-	$(CC) -shared -Wl,-soname,$@ -o $@  $^ $(CFLAGS) -I ../include
+	$(CC) -g -shared -Wl,-soname,$@ -o $@  $^ $(LDFLAGS)
 	mv $@ ../lib/
 
 .PHONY: clean
 clean:
-	- rm  *.so *.o
+	- rm -fr *.so *.o

@@ -1,4 +1,2 @@
-LDFLAGS = -I ../include -L ../lib -lassert -lerrno \
-          -llocale -lsetjmp -lstdio -lstring -lctype \
-          -lfloat -lmath -lsignal -lstdlib -ltime
+LDFLAGS = -I ../include
 CFLAGS = -g

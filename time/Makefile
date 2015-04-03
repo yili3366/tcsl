@@ -1,49 +1,51 @@
 include ../Makefile.in
 
+CFLAGS += -fPIC -g -c -Wall
+
 all: lib
 
 lib: libtime.so
 
 asctime.o   :asctime.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 clock.o     :clock.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 ctime.o     :ctime.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 difftime.o  :difftime.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 gmtime.o    :gmtime.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 localtim.o  :localtim.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 mktime.o    :mktime.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 strftime.o  :strftime.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 time.o      :time.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 xgentime.o  :xgentime.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 xgetdst.o   :xgetdst.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 xgettime.o  :xgettime.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 xgetzone.o  :xgetzone.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 xisdst.o    :xisdst.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 xstrftim.o  :xstrftim.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 xttotm.o    :xttotm.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 
 libtime.so : asctime.o clock.o ctime.o difftime.o \
              gmtime.o localtim.o mktime.o strftime.o \
              time.o xgentime.o xgetdst.o xgettime.o \
              xgetzone.o xisdst.o xstrftim.o xttotm.o ../errno/errno.o
-	$(CC) -shared -Wl,-soname,$@ -o $@  $^ $(CFLAGS) -I ../include
+	$(CC) -g -shared -Wl,-soname,$@ -o $@  $^ $(LDFLAGS)
 	mv $@ ../lib/
 
 .PHONY: clean
 clean:
-	- rm $(OBJS) *.so *.o
+	- rm -fr  *.so *.o

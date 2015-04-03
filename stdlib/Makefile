@@ -1,75 +1,77 @@
 include ../Makefile.in
 
+CFLAGS += -fPIC -g -c -Wall
+
 all: lib
 
 lib: libstdlib.so
 
 abort.o     :abort.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 abs.o       :abs.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 atexit.o    :atexit.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 atof.o      :atof.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 atoi.o      :atoi.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 atol.o      :atol.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 bsearch.o   :bsearch.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 calloc.o    :calloc.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 div.o       :div.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 exit.o      :exit.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 free.o      :free.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 getenv.o    :getenv.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 labs.o      :labs.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 ldiv.o      :ldiv.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 malloc.o    :malloc.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 mblen.o     :mblen.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 mbstowcs.o  :mbstowcs.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 mbtowc.o    :mbtowc.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 qsort.o     :qsort.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 rand.o      :rand.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 realloc.o   :realloc.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 srand.o     :srand.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 strtod.o    :strtod.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 strtol.o    :strtol.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 strtoul.o   :strtoul.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 system.o    :system.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 wcstombs.o  :wcstombs.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 wctomb.o    :wctomb.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 xgetmem.o   :xgetmem.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 xmbtowc.o   :xmbtowc.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 xstod.o     :xstod.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 xstoul.o    :xstoul.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 xwctomb.o   :xwctomb.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 
 libstdlib.so :abort.o abs.o atexit.o atof.o atoi.o \
               atol.o bsearch.o calloc.o div.o exit.o \
@@ -78,9 +80,9 @@ libstdlib.so :abort.o abs.o atexit.o atof.o atoi.o \
               realloc.o srand.o strtod.o strtol.o strtoul.o \
               system.o wcstombs.o wctomb.o xgetmem.o \
               xmbtowc.o xstod.o xstoul.o xwctomb.o ../errno/errno.o
-	$(CC) -shared -Wl,-soname,$@ -o $@  $^ $(CFLAGS) -I ../include
+	$(CC) -g -shared -Wl,-soname,$@ -o $@  $^ $(LDFLAGS)
 	mv $@ ../lib/
 
 .PHONY: clean
 clean:
-	- rm  *.so *.o
+	- rm -fr *.so *.o

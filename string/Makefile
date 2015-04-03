@@ -1,55 +1,57 @@
 include ../Makefile.in
 
+CFLAGS += -fPIC -g -c -Wall
+
 all: lib
 
 lib: libstring.so
 
 memchr.o    :memchr.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 memcmp.o    :memcmp.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 memcpy.o    :memcpy.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 memmove.o   :memmove.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 memset.o    :memset.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 strcat.o    :strcat.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 strchr.o    :strchr.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 strcmp.o    :strcmp.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 strcoll.o   :strcoll.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 strcpy.o    :strcpy.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 strcspn.o   :strcspn.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 strerror.o  :strerror.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 strlen.o    :strlen.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 strncat.o   :strncat.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 strncmp.o   :strncmp.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 strncpy.o   :strncpy.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 strpbrk.o   :strpbrk.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 strrchr.o   :strrchr.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 strspn.o    :strspn.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 strstr.o    :strstr.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 strtok.o    :strtok.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 strxfrm.o   :strxfrm.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 xstrxfrm.o  :xstrxfrm.c
-	$(CC) -fPIC -g -c -Wall $^ -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 
 libstring.so: memchr.o memcmp.o memcpy.o memmove.o \
               memset.o strcat.o strchr.o strcmp.o \
@@ -57,9 +59,9 @@ libstring.so: memchr.o memcmp.o memcpy.o memmove.o \
               strlen.o strncat.o strncmp.o strncpy.o \
               strpbrk.o strrchr.o strspn.o strstr.o \
               strtok.o strxfrm.o xstrxfrm.o ../errno/errno.o
-	$(CC) -shared -Wl,-soname,$@ -o $@  $^ $(CFLAGS) -I ../include
+	$(CC) -g -shared -Wl,-soname,$@ -o $@  $^ $(LDFLAGS)
 	mv $@ ../lib/
 
 .PHONY: clean
 clean:
-	- rm *.so *.o
+	- rm -fr *.so *.o

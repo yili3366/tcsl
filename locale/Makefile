@@ -1,40 +1,42 @@
 include ../Makefile.in
 
+CFLAGS += -fPIC -g -c -Wall
+
 all: lib
 
 lib: liblocale.so
 
 localeco.o : localeco.c
-	$(CC) -fPIC -g -c -Wall $^ $(CFLAGS) -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 setlocal.o : setlocal.c
-	$(CC) -fPIC -g -c -Wall $^ $(CFLAGS) -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 xdefloc.o  : xdefloc.c
-	$(CC) -fPIC -g -c -Wall $^ $(CFLAGS) -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 xfmtval.o  : xfmtval.c
-	$(CC) -fPIC -g -c -Wall $^ $(CFLAGS) -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 xfreeloc.o : xfreeloc.c
-	$(CC) -fPIC -g -c -Wall $^ $(CFLAGS) -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 xgetloc.o  : xgetloc.c
-	$(CC) -fPIC -g -c -Wall $^ $(CFLAGS) -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 xloctab.o  : xloctab.c
-	$(CC) -fPIC -g -c -Wall $^ $(CFLAGS) -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 xlocterm.o : xlocterm.c
-	$(CC) -fPIC -g -c -Wall $^ $(CFLAGS) -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 xmakeloc.o : xmakeloc.c
-	$(CC) -fPIC -g -c -Wall $^ $(CFLAGS) -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 xreadloc.o : xreadloc.c
-	$(CC) -fPIC -g -c -Wall $^ $(CFLAGS) -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 xsetloc.o  : xsetloc.c
-	$(CC) -fPIC -g -c -Wall $^ $(CFLAGS) -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 xstate.o   : xstate.c
-	$(CC) -fPIC -g -c -Wall $^ $(CFLAGS) -I ../include
+	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 
 liblocale.so: localeco.o setlocal.o xdefloc.o xfmtval.o xfreeloc.o \
               xgetloc.o xloctab.o xlocterm.o xmakeloc.o xreadloc.o \
               xsetloc.o xstate.o ../errno/errno.o
-	$(CC) -shared -Wl,-soname,$@ -o $@  $^ $(CFLAGS) -I ../include
+	$(CC) -g -shared -Wl,-soname,$@ -o $@  $^ $(LDFLAGS)
 	mv $@ ../lib/
 
 .PHONY: clean
 clean:
-	- rm  *.o *.so
+	- rm -fr *.o *.so
