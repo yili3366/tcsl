@@ -30,7 +30,7 @@ int _Mbtowc(wchar_t *pwc, const char *s, size_t nin, _Mbsave *ps)
             break;
         state = (code & ST_STATE) >> ST_STOFF;
         if (code & ST_FOLD)
-            wc = (wc & -UCHAR_MAX) | (code & ST_CH);
+            wc = (wc & ~UCHAR_MAX) | (code & ST_CH);
         if (code & ST_ROTATE)
             wc = ((wc >> CHAR_BIT) & UCHAR_MAX) | (wc << CHAR_BIT);
         if ((code & ST_INPUT) && (*su != '\0'))

@@ -5,12 +5,26 @@
 #include "xstdio.h"
 
 #define MAX_PAD (sizeof (spaces) - 1)
-#define PAD(s, n) if (0 < (n)) {int i, j = (n); \
-    for (; 0 < j; j -= i) \
-    {i = MAX_PAD < j ? MAX_PAD : j; PUT(s, i); } }
+#define PAD(s, n) \
+do { \
+    if (0 < (n)) { \
+        int i, j = (n); \
+        for (; 0 < j; j -= i) { \
+            i = MAX_PAD < j ? MAX_PAD : j; \
+            PUT(s, i); \
+        } \
+    } \
+} while(0)
+
 #define PUT(s, n) \
-    if (0 < (n)) {if ((arg = (*pfn)(arg, s, n)) != NULL)\
-        x.nchar += (n); else return (EOF); }
+do { \
+    if (0 < (n)) { \
+        if ((arg = (*pfn)(arg, s, n)) != NULL) \
+            x.nchar += (n); \
+        else \
+            return (EOF); \
+    } \
+} while(0)
 
 static char spaces[] = "                                ";
 static char zeroes[] = "00000000000000000000000000000000";
@@ -49,7 +63,7 @@ int _Printf(void *(*pfn)(void *, const char*, size_t),
             _FSP, _FPL, _FMI, _FNO, _FZE, 0};
         for (x.flags = 0; (t = strchr(fchar, *s)) != NULL; ++s)
             x.flags |= fbit[t - fchar];
-        if (*s == '*') { /* qet width argument */
+        if (*s == '*') { /* get width argument */
             x.width = va_arg(ap, int);
             if (x.width < 0) { /* same as '-' flag */
                 x.width = -x.width;
@@ -77,12 +91,12 @@ int _Printf(void *(*pfn)(void *, const char*, size_t),
         _Putfld(&x, &ap, *s, ac);
         x.width -= x.n0 + x.nz0 + x.n1 + x.nz1 + x.n2 + x.nz2;
         if (! (x.flags & _FMI))
-            PAD(spaces, x . width);
+            PAD(spaces, x.width);
         PUT(ac, x.n0);
-        PAD(zeroes, x . nz0) ;
-        PUT(x.s, x.n1) ;
-        PAD(zeroes, x . nz1);
-        PUT(x.s + x . n1, x . n2);
+        PAD(zeroes, x.nz0);
+        PUT(x.s, x.n1);
+        PAD(zeroes, x.nz1);
+        PUT(x.s + x.n1, x.n2);
         PAD(zeroes, x.nz2);
         if (x.flags & _FMI)
             PAD(spaces, x.width);
