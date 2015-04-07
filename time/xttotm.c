@@ -47,21 +47,21 @@ struct tm *_Ttotm(struct tm *t, time_t secsarg, int isdst)
         t->tm_year = year;
         t->tm_yday = days;
         }
+        {
+        int mon;
+        const short *pm = MONTAB(year);
+        for (mon = 12; days< pm[--mon];)
+            ;
+        /* determine month */
+        t->tm_mon = mon;
+        t->tm_mday = days - pm[mon] + 1;
+        }
+        secs %= 86400;
+        t->tm_hour = secs / 3600;
+        secs %= 3600;
+        t->tm_min = secs / 60;
+        t->tm_sec = secs % 60;
+        if (0 <= t->tm_isdst || (t->tm_isdst = _Isdst(t)) <= 0)
+            return (t); /* loop only if <0 => 1 */
     }
-    {
-    int mon;
-    const short *pm = MONTAB(year);
-    for (mon = 12; days< pm[--mon];)
-        ;
-    /* determine month */
-    t->tm_mon = mon;
-    t->tm_mday = days - pm[mon] + 1;
-    }
-    secs %= 86400;
-    t->tm_hour = secs / 3600;
-    secs %= 3600;
-    t->tm_min = secs / 60;
-    t->tm_sec = secs % 60;
-    if (0 <= t->tm_isdst || (t->tm_isdst = _Isdst(t)) <= 0)
-        return (t); /* loop only if <0 => 1 */
 }
