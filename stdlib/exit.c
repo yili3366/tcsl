@@ -20,5 +20,5 @@ void exit(int status)
         if (_Files[i])
             fclose(_Files[i]);
     }
-    _Exit(status);
+    _exit(status);
 }

@@ -3,7 +3,6 @@
 #include "xstdio.h"
 
 /* UNIX system call */
-long _Lseek(int, long, int);
 
 int _Fspos(FILE *str, const fpos_t *ptr, long loff, int way)
 { /* position a file */
@@ -19,7 +18,7 @@ int _Fspos(FILE *str, const fpos_t *ptr, long loff, int way)
             : str->_Rend - str->_Next;
     if ((way == SEEK_CUR && loff != 0)
         || way != SEEK_SET || loff != -1)
-        loff = _Lseek(str->_Handle, loff, way);
+        loff = lseek(str->_Handle, loff, way);
     if (loff == -1) { /* request failed */
         errno = _EFPOS;
         return (EOF) ;

@@ -3,7 +3,6 @@
 #include "xstdio.h"
 
 /* UNIX system call */
-int _Getpid(void);
 
 char * tmpnam(char *s)
 { /* create a temporary file name */
@@ -15,7 +14,7 @@ char * tmpnam(char *s)
 
     if (s == NULL)
         s = buf;
-    seed = seed == 0 ? _Getpid() : seed + 1;
+    seed = seed == 0 ? getpid() : seed + 1;
     strcpy (s, "/tmp/t" );
     i = 5;
     p = s + strlen(s) + i ;

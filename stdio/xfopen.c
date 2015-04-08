@@ -2,7 +2,6 @@
 #include "xstdio.h"
 
 /* UNIX system call */
-int _Open(const char*, int, int);
 
 int _Fopen ( const char *path, unsigned int smode, const char *mode)
 { /* open from a file */
@@ -19,5 +18,5 @@ int _Fopen ( const char *path, unsigned int smode, const char *mode)
     if (smode & _MCREAT)
         //acc |= 01000; /* O_CREAT */
         acc |= 00000100; /* Linux O_CREAT */
-    return (_Open(path, acc, 0666)) ;
+    return (open(path, acc, 0666)) ;
 }

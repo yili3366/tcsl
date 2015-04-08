@@ -22,8 +22,6 @@ mktime.o    :mktime.c
 	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 strftime.o  :strftime.c
 	$(CC) $(CFLAGS) $^ $(LDFLAGS)
-time.o      :time.c
-	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 xgentime.o  :xgentime.c
 	$(CC) $(CFLAGS) $^ $(LDFLAGS)
 xgetdst.o   :xgetdst.c
@@ -41,7 +39,7 @@ xttotm.o    :xttotm.c
 
 libtime.so : asctime.o clock.o ctime.o difftime.o \
              gmtime.o localtim.o mktime.o strftime.o \
-             time.o xgentime.o xgetdst.o xgettime.o \
+             xgentime.o xgetdst.o xgettime.o \
              xgetzone.o xisdst.o xstrftim.o xttotm.o ../errno/errno.o
 	$(CC) -g3 -gdwarf-2 -shared -Wl,-soname,$@ -o $@  $^ $(LDFLAGS)
 	mv $@ ../lib/

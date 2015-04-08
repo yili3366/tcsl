@@ -36,5 +36,4 @@ struct tm *localtime(const time_t *);
 time_t mktime(struct tm *);
 size_t strftime(char *, size_t, const char *,
     const struct tm *) ;
-time_t time(time_t *);
 #endif

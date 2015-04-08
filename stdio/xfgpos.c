@@ -3,11 +3,9 @@
 #include "xstdio.h"
 
     /* UNIX system call */
-long _Lseek(int, long, int);
-
 long _Fgpos (FILE *str, fpos_t *ptr)
 { /* get file position */
-    long loff = _Lseek(str->_Handle, 0L, 1);
+    long loff = lseek(str->_Handle, 0L, 1);
 
     if (loff == -1) { /* query failed */
         errno = _EFPOS;
