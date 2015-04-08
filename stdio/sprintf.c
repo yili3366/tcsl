@@ -7,7 +7,7 @@ static void *prout(void *s, const char *buf, size_t n)
     return ((char *)memcpy(s, buf, n) + n);
 }
 
-int (sprintf) (char *s, const char *fmt, ...)
+int sprintf(char *s, const char *fmt, ...)
 { /* print formatted to string */
     int ans;
     va_list ap;

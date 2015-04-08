@@ -1,7 +1,7 @@
 /* free function */
 #include "xalloc.h"
 
-void (free) (void *ptr)
+void free(void *ptr)
 { /* free an allocated data object */
     _Cell *q;
 

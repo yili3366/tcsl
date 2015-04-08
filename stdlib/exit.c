@@ -9,7 +9,7 @@
 void (*_Atfuns[NATS]) (void) = {0};
 size_t _Atcount = (NATS);
 
-void (exit) (int status)
+void exit(int status)
 {
     while (_Atcount < NATS) /* tidy up and exit to system */
         (*_Atfuns[_Atcount++]) ();

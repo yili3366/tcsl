@@ -1,7 +1,7 @@
 /* div function */
 #include "stdlib.h"
 
-div_t (div) (int numer, int denom)
+div_t div(int numer, int denom)
 { /* compute int quotient and remainder */
     div_t val;
 

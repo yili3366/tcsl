@@ -44,7 +44,7 @@ static _Cell **findmem(size_t size)
     }
 }
 
-void *(malloc) (size_t size)
+void *malloc(size_t size)
 { /* allocate a data object on the heap */
     _Cell *q, **qb;
 

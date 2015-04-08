@@ -1,7 +1,7 @@
 /* strlen function */
 #include "string.h"
 
-size_t (strlen) (const char *s)
+size_t strlen(const char *s)
 {    /* find length of s[] */
     const char *sc;
 

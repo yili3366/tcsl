@@ -1,7 +1,7 @@
 /* strrchr function */
 #include "string.h"
 
-char *(strrchr) (const char *s, int c)
+char *strrchr(const char *s, int c)
 { /* find last occurrence of c in char s [1 */
     const char ch = c;
     const char *sc;

@@ -3,7 +3,7 @@
 #include "stdlib.h"
 #include "xstdio.h"
 
-int (setvbuf) (FILE *str, char *abuf, int smode, size_t size)
+int setvbuf(FILE *str, char *abuf, int smode, size_t size)
 { /* set up buffer for a stream */
     int mode;
     unsigned char *buf = (unsigned char *)abuf;

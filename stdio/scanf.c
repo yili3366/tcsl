@@ -11,7 +11,7 @@ static int scin(void *str, int ch)
         return (ch);
 }
 
-int (scanf)(const char *fmt, ...)
+int scanf(const char *fmt, ...)
 { /* read formatted from stdin */
     int ans;
     va_list ap;

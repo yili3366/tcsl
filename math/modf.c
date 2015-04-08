@@ -1,7 +1,7 @@
 /* modf function */
 #include "xmath.h"
 
-double (modf) (double x, double *pint)
+double modf(double x, double *pint)
 {    /* compute modf(x, &intpart) */
     *pint = x;
     switch (_Dint(pint, 0)) {

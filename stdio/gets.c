@@ -2,7 +2,7 @@
 #include "string.h"
 #include "xstdio.h"
 
-char *(gets) (char *buf)
+char *gets(char *buf)
 { /* get a line from stdio */
     unsigned char *s;
 

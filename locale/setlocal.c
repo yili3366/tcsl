@@ -25,7 +25,7 @@ static _Linfo *pcats[_NCAT] = {
     &_Clocale, &_Clocale
 };
 
-char *(setlocale) (int cat , const char *lname)
+char *setlocale(int cat , const char *lname)
 {
 /* set new locale */
     size_t i;

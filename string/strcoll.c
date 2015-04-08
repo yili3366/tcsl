@@ -23,7 +23,7 @@ static size_t getxfrm(Sctl *p)
     return (i);
 }
 
-int (strcoll) (const char *s1, const char *s2)
+int strcoll(const char *s1, const char *s2)
 {    /* compare s1[], s2[] using locale-dependent rule */
     size_t n1, n2;
     Sctl st1, st2;

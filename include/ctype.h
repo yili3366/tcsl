@@ -13,10 +13,19 @@
 #define _UP     0x02        /* 'A'-'Z' */
 #define _XD     0x01        /* '0'-'9','A'-'F','a'-'f' */
     /*  declarations */
-int isalnum(int), isalpha(int), iscntrl(int), isdigit(int);
-int isgraph(int), islower(int), isprint(int), ispunct(int);
-int isspace(int), isupper(int), isxdigit(int);
-int tolower(int), toupper(int);
+int isalnum(int);
+int isalpha(int);
+int iscntrl(int);
+int isdigit(int);
+int isgraph(int);
+int islower(int);
+int isprint(int);
+int ispunct(int);
+int isspace(int);
+int isupper(int);
+int isxdigit(int);
+int tolower(int);
+int toupper(int);
 extern const short *_Ctype, *_Tolower, *_Toupper;
     /* macro overrides */
 #define isalnum(c)          (_Ctype[(int)(c)] & (_DI|_LO|_UP|_XA))

@@ -4,7 +4,7 @@
 #include "limits.h"
 #include "stdlib.h"
 
-long (strtol) (const char *s, char **endptr, int base)
+long strtol(const char *s, char **endptr, int base)
 { /* convert string to long, with checking */
     const char *sc;
     unsigned long x;

@@ -1,7 +1,7 @@
 /* ungetc function */
 #include "xstdio.h"
 
-int (ungetc) (int c, FILE *str)
+int ungetc(int c, FILE *str)
 { /* push Character back on stream */
     if (c == EOF
         || sizeof (str->_Back) <= str->_Nback

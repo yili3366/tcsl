@@ -11,7 +11,7 @@ static int scin(void *str, int ch)
         return (ch);
 }
 
-int (fscanf)(FILE *str, const char *fmt, ... )
+int fscanf(FILE *str, const char *fmt, ... )
 {
      /* read formatted from stream */
     int ans;

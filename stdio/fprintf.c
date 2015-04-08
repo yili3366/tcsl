@@ -6,7 +6,7 @@ static void *prout(void *str, const char *buf, size_t n)
     return (fwrite (buf, 1, n, str) == n ? str : NULL);
 }
 
-int (fprintf) (FILE *str, const char *fmt, ... )
+int fprintf(FILE *str, const char *fmt, ... )
 { /* print formatted to stream */
     int ans;
     va_list ap;

@@ -1,7 +1,7 @@
 /* ldexp function */
 #include "xmath.h"
 
-double (ldexp)(double x, int xexp)
+double ldexp(double x, int xexp)
 {    /* compute ldexp(x, xexp) */
     switch (_Dtest(&x)) {     /* test for special codes */
     case NAN:

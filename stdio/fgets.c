@@ -2,7 +2,7 @@
 #include "string.h"
 #include "xstdio.h"
 
-char * (fgets) (char *buf, int n, FILE *str)
+char * fgets(char *buf, int n, FILE *str)
 {   /* get a line from stream */
     unsigned char *s;
 

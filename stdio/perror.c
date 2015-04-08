@@ -3,7 +3,7 @@
 #include "string.h"
 #include "xstdio.h"
 
-void (perror) (const char *s)
+void perror(const char *s)
 { /* put error string to stderr */
     static char buf [] = { "error #xxx" } ;
 

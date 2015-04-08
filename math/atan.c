@@ -1,7 +1,7 @@
 /* atan function */
 #include "xmath.h"
 
-double (atan) (double x)
+double atan(double x)
 {
     /* compute atan(x) */
     unsigned short hex;

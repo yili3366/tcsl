@@ -2,7 +2,7 @@
 #include "xstdio.h"
 #include "yfuns.h"
 
-int (fflush) (FILE *str)
+int fflush(FILE *str)
 {   /* flush an output stream */
     int n;
     unsigned char *s;

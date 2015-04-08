@@ -1,7 +1,7 @@
 /* fabs function */
 #include "xmath.h"
 
-double (fabs) (double x)
+double fabs(double x)
 {
     /* compute fabs */
     switch (_Dtest(&x)) {    /* test for special codes */

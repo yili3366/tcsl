@@ -17,7 +17,7 @@ static int scin(void *str, int ch)
     return (ch);
 }
 
-int (sscanf)(const char *buf, const char *fmt, ... )
+int sscanf(const char *buf, const char *fmt, ... )
 {
  /* read formatted from string */
     int ans;

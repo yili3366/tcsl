@@ -3,7 +3,7 @@
 #include "string.h"
 #include "stdlib.h"
 
-size_t (wcstombs) (char *s, const wchar_t *wcs, size_t n)
+size_t wcstombs(char *s, const wchar_t *wcs, size_t n)
 { /* translate wide char string to multibyte string */
     char *sc;
     char state= {0};

@@ -1,7 +1,7 @@
 /* bsearch function */
 #include "stdlib.h"
 
-void *(bsearch)(const void *key, const void *base,
+void *bsearch(const void *key, const void *base,
     size_t nelem, size_t size, _Cmpfun *cmp)
 { /* search sorted table by binary chop */
     const char *p;

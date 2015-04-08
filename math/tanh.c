@@ -15,7 +15,7 @@ static const double q[4] = {
 };
 static const double ln3by2 = {0.54930614433405484570};
 
-double (tanh) (double x)
+double tanh(double x)
 {    /* compute tanh(x) */
     switch (_Dtest(&x)) { /* test for special codes */
     case NAN:

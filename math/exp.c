@@ -1,7 +1,7 @@
 /* exp function */
 #include "xmath.h"
 
-double (exp) (double x)
+double exp(double x)
 {   /* compute exp(x) */
     switch (_Dtest(&x)) {
     case NAN:    /* test for special codes */

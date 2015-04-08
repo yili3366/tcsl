@@ -1,7 +1,7 @@
 /* cosh function */
 #include "xmath.h"
 
-double (cosh) (double x)
+double cosh(double x)
 {    /* compute cosh(x) */
     switch (_Dtest(&x)) { /* test for special codes */
     case NAN:

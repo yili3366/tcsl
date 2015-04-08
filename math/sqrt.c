@@ -3,7 +3,7 @@
 #include "limits.h"
 #include "xmath.h"
 
-double (sqrt) (double x)
+double sqrt(double x)
 { /* compute sqrt(x) */
     short xexp;
 

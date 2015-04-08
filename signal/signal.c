@@ -3,7 +3,7 @@
     /* external declarations */
 extern _Sigfun *_Sigtable[_NSIG];
 
-_Sigfun *(signal) (int sig, _Sigfun *fun)
+_Sigfun *signal(int sig, _Sigfun *fun)
 { /* specify handling for a signal */
     _Sigfun *s;
 

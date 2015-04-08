@@ -2,7 +2,7 @@
 #include "stdlib.h"
 #include "xstdio.h"
 
-FILE *(freopen) (const char *name, const char *mods, FILE *str)
+FILE *freopen(const char *name, const char *mods, FILE *str)
 { /* reopen a file */
     unsigned short mode = str->_Mode & _MALFIL;
 

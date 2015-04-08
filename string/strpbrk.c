@@ -1,7 +1,7 @@
 /* strpbrk function */
 #include "string.h"
 
-char *(strpbrk) (const char *s1, const char *s2)
+char *strpbrk(const char *s1, const char *s2)
 { /* find index of first s1 [i] that matches any s2 [] */
     const char *sc1, *sc2;
 

@@ -2,7 +2,7 @@
 #include "string.h"
 #include "xstdio.h"
 
-int (fputs) (const char *s, FILE *str)
+int fputs(const char *s, FILE *str)
 {    /* put a string to stream */
     while (*s) { /* ensure room in buffer */
         if (str->_Next < str->_Wend)

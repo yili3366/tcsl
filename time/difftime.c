@@ -2,7 +2,7 @@
 #include "time.h"
 #include "xtime.h"
 
-double (difftime) (time_t t1, time_t t0)
+double difftime(time_t t1, time_t t0)
 {    /* compute difference in times */
     t0 -= _TBIAS;
     t1 -= _TBIAS;

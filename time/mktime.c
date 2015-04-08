@@ -2,7 +2,7 @@
 #include "limits.h"
 #include "xtime.h"
 
-time_t (mktime) (struct tm *t)
+time_t mktime(struct tm *t)
 { /* convert local time structure to scalar time */
     double dsecs;
     int mon, year, ymon;

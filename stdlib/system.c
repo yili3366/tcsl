@@ -7,7 +7,7 @@ int _Execl(const char*, const char*, ...);
 int _Fork(void);
 int _Wait(int *);
 
-int (system)(const char *s)
+int system(const char *s)
 { /* send text to system command line processor */
     if (s) { /* not just a test */
         int pid = _Fork();

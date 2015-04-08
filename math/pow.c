@@ -1,7 +1,7 @@
 /* pow function */
 #include "xmath.h"
 
-double (pow) (double x, double y)
+double pow(double x, double y)
 {    /* compute x^y */
     double yi = y ;
     double yx, z;

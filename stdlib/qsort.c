@@ -6,7 +6,7 @@
 #define MAX_BUF 256
 /* chunk to copy on swap */
 
-void (qsort)(void *base, size_t n, size_t size, _Cmpfun *cmp)
+void qsort(void *base, size_t n, size_t size, _Cmpfun *cmp)
 { /* sort (char base[size])[n] using quicksort*/
     while (1 < n) { /* worth sorting */
         size_t i = 0 ;

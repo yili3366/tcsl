@@ -3,7 +3,7 @@
 #include "string.h"
 #include "xstdio.h"
 
-FILE *(tmpfile)(void)
+FILE *tmpfile(void)
 {   /* open a temporary file */
     FILE *str;
     char fn[L_tmpnam], *s;

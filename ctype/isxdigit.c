@@ -6,4 +6,3 @@ int (isxdigit)(int c)
 {
     return (_Ctype[c] & _XD);
 }
-

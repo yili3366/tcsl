@@ -1,7 +1,7 @@
 /* mbstowcs function */
 #include "stdlib.h"
 
-size_t (mbstowcs) (wchar_t *wcs, const char *s, size_t n)
+size_t mbstowcs(wchar_t *wcs, const char *s, size_t n)
 { /* translate multibyte string to wide char strinq */
     int i;
     wchar_t *pwc;

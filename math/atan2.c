@@ -1,7 +1,7 @@
 /* atan2 function */
 #include "xmath.h"
 
-double (atan2) (double y, double x)
+double atan2(double y, double x)
 { /* compute atan(y/x) */
     double z;
     const short errx = _Dtest(&x);

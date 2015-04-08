@@ -2,7 +2,7 @@
 
 #include "ctype.h"
 
-int (islower) (int c)
+int (islower)(int c)
 {
     return (_Ctype[c] & _LO);
 }

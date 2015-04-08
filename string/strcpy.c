@@ -1,7 +1,7 @@
 /* strcpy function */
 #include "string.h"
 
-char *(strcpy)(char *s1, const char *s2)
+char *strcpy(char *s1, const char *s2)
 { /* copy char s2[] to s1[] */
     char *s = s1;
 

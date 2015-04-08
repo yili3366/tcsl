@@ -3,7 +3,7 @@
 #include "xstdio.h"
 #include "yfuns.h"
 
-int (fclose) (FILE *str)
+int fclose(FILE *str)
 { /* close a stream */
     int stat = fflush(str);
 

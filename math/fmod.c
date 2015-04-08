@@ -1,7 +1,7 @@
 /* fmod function */
 #include "xmath.h"
 
-double (fmod) (double x, double y)
+double fmod(double x, double y)
 {   /* compute fmod(x, y) */
     const short errx = _Dtest(&x);
     const short erry = _Dtest(&y);

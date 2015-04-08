@@ -2,7 +2,7 @@
 #include "string.h"
 #include "xstdio.h"
 
-size_t (fwrite) (const void *ptr, size_t size,
+size_t fwrite(const void *ptr, size_t size,
     size_t nelem, FILE * str)
 {   /* write to stream from array */
     char *s = (char *)ptr;

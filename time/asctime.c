@@ -21,7 +21,7 @@ static const char mons[] = {
 static const char zone[] = {""}; /* adapt by default */
 static _Tinfo ctinfo = {ampm, days, fmts, isdst, mons, zone};
 _Tinfo _Times = {ampm, days, fmts, isdst, mons, zone};
-char *(asctime)(const struct tm *t)
+char *asctime(const struct tm *t)
 {
     /* format time as "Day Men dd hh:mm:ss yyyy\n" */
     static char tbuf[] = "Day Men dd hh:mm:ss yyyy\n";

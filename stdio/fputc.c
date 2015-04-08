@@ -1,7 +1,7 @@
 /* fputc function */
 #include "xstdio.h"
 
-int (fputc) (int ci, FILE *str)
+int fputc(int ci, FILE *str)
 {   /* put a character to stream */
     unsigned char c = ci;
 

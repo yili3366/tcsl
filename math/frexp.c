@@ -1,7 +1,7 @@
 /* frexp function */
 #include "xmath.h"
 
-double (frexp) (double x, int *pexp)
+double frexp(double x, int *pexp)
 {
     short binexp;      /* compute frexp(x, &i) */
 

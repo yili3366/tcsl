@@ -23,7 +23,7 @@ time_t _Tzoff(void)
     return (tzoff * 60);
 }
 
-struct tm * (localtime) (const time_t *tod)
+struct tm * localtime(const time_t *tod)
 { /* convert to local time structure */
     return (_Ttotm(NULL, *tod + _Tzoff(), -1));
 }

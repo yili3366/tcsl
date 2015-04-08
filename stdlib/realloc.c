@@ -2,7 +2,7 @@
 #include "string.h"
 #include "xalloc.h"
 
-void *(realloc) (void *ptr, size_t size)
+void *realloc(void *ptr, size_t size)
 { /* reallocate a data object on the heap */
     _Cell *q;
 

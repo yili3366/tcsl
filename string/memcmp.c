@@ -1,7 +1,7 @@
 /* memcmp function */
 #include "string.h"
 
-int (memcmp)(const void *s1, const void *s2,
+int memcmp(const void *s1, const void *s2,
     size_t n)
 { /* compare unsigned char s1[n], s2[n] */
     const unsigned char *su1, *su2;

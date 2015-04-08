@@ -1,7 +1,7 @@
 /* strcat function */
 #include "string.h"
 
-char *(strcat) (char *s1, const char *s2)
+char *strcat(char *s1, const char *s2)
 { /* copy char s2(] to end of s1[] */
     char *s;
 

@@ -5,7 +5,7 @@
 /* UNIX system call */
 int _Getpid(void);
 
-char * (tmpnam) (char *s)
+char * tmpnam(char *s)
 { /* create a temporary file name */
     int i ;
     char *p;

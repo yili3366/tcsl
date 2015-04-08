@@ -1,7 +1,7 @@
 /* fgetc function */
 #include "xstdio.h"
 
-int (fgetc) (FILE *str)
+int fgetc(FILE *str)
 {
  /* get a character from stream */
     if (0 < str->_Nback) { /* da1iver pushed back char */

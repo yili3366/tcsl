@@ -16,7 +16,7 @@ static const double q[4] = {
     -0.21108770058106271242e+7
 };
 
-double (sinh) (double x)
+double sinh(double x)
 {
     /* compute sinh(x) */
     switch (_Dtest(&x)) { /* test for special codes */

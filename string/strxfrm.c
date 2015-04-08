@@ -1,7 +1,7 @@
 /* strxfr.m function */
 #include "xstrxfrm.h"
 
-size_t (strxfrm)(char *s1, const char *s2, size_t n)
+size_t strxfrm(char *s1, const char *s2, size_t n)
 { /* transform s2[] to s1[] by locale-dependent rule */
     size_t nx = 0;
     const unsigned char *s = (const unsigned char *)s2;

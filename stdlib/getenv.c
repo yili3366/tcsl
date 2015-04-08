@@ -3,7 +3,7 @@
 #include "string.h"
 #include "yfuns.h"
 
-char *(getenv)(const char *name)
+char *getenv(const char *name)
 { /* search environment list for named entry */
     const char *s;
     size_t n = strlen(name);

@@ -2,7 +2,7 @@
 #include "stdlib.h"
 #include "xstdio.h"
 
-FILE *(fopen) (const char *name, const char *mods)
+FILE *fopen(const char *name, const char *mods)
 {    /* open a file */
     FILE *str;
     size_t i;
